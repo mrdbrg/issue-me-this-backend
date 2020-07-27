@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_07_24_181229) do
     t.string "name"
     t.integer "age"
     t.string "profession"
+    t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

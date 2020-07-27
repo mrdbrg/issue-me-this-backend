@@ -16,6 +16,8 @@ class IssuesController < ApplicationController
   end
 
   def show
-    
+    myIssue = Issue.find_by(id: params[:id])
+    # byebug
+    render json: myIssue
   end
 end

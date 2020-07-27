@@ -4,11 +4,13 @@ UserSkill.destroy_all
 User.destroy_all
 Skill.destroy_all
 
+avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
+
 users = [
   {
     name: "MARLON",
     age: 30,
-    profession: "JR. DEV"
+    profession: "JR. DEV",
   },
   {
     name: "SENADA",
@@ -80,6 +82,22 @@ comments = [
   {
     title: "CAN YOU SHARE THE CODE?",
     comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+  },
+  {
+    title: "HAVE YOU TRIED DROPING THE DATABASE?",
+    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+  },
+  {
+    title: "FIX IT!",
+    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+  },
+  {
+    title: "HAVE YOU TRIED DROPING THE DATABASE?",
+    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+  },
+  {
+    title: "FIX IT!",
+    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
   }
 ]
 
@@ -95,7 +113,8 @@ users.each do |user|
   User.create({
     name: user[:name],
     age: user[:age],
-    profession: user[:profession]
+    profession: user[:profession],
+    avatar: "https://semantic-ui.com/images/avatar/small/#{avatars.sample}.jpg"
   })
 end
 
