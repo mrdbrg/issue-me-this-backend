@@ -23,4 +23,11 @@ class IssuesController < ApplicationController
     myIssue = Issue.find_by(id: params[:id])
     render json: myIssue
   end
+
+  # I may not be able to delete an issue as a user - maybe admin?
+  # def destroy
+  #   myIssue = Issue.find_by(id: params[:id])
+  #   byebug
+  #   myIssue.destroy
+  # end
 end
