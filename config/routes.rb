@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # ====> sessions routes
-  # resources :sessions, only: [:create]
-  # post '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#login'
 
   # ====> issues routes
   resources :issues, only: [:index, :create, :show, :destroy]

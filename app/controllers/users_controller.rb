@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    # byebug
+    byebug
     # create user
     user = User.create(
       username: params[:username],
