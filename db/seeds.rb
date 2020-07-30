@@ -4,7 +4,26 @@ UserSkill.destroy_all
 User.destroy_all
 Skill.destroy_all
 
-avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
+skills = [
+      { key: 'angular', text: 'Angular', value: 'angular' },
+      { key: 'css', text: 'CSS', value: 'css' },
+      { key: 'design', text: 'Graphic Design', value: 'design' },
+      { key: 'ember', text: 'Ember', value: 'ember' },
+      { key: 'html', text: 'HTML', value: 'html' },
+      { key: 'ia', text: 'Information Architecture', value: 'ia' },
+      { key: 'javascript', text: 'Javascript', value: 'javascript' },
+      { key: 'mech', text: 'Mechanical Engineering', value: 'mech' },
+      { key: 'meteor', text: 'Meteor', value: 'meteor' },
+      { key: 'node', text: 'NodeJS', value: 'node' },
+      { key: 'plumbing', text: 'Plumbing', value: 'plumbing' },
+      { key: 'python', text: 'Python', value: 'python' },
+      { key: 'rails', text: 'Rails', value: 'rails' },
+      { key: 'react', text: 'React', value: 'react' },
+      { key: 'repair', text: 'Kitchen Repair', value: 'repair' },
+      { key: 'ruby', text: 'Ruby', value: 'ruby' },
+      { key: 'ui', text: 'UI Design', value: 'ui' },
+      { key: 'ux', text: 'User Experience', value: 'ux' }
+]
 
 issues = [
   {
@@ -96,36 +115,78 @@ comments = [
   }
 ]
 
-ages = [*19..60]
-randomPick = [*1..5]
-professions = ["Jr. Software Engineer", "DevOps", "Senior Software Engineer", "Technical Support", "IT", "Electronic Engineer"]
-
 # create skills
-20.times {
-  if Skill.exists?(name: Faker::ProgrammingLanguage.name)
+skills.each do |skill| 
+  if !Skill.exists?(key: skill[:key])
     Skill.create({
-      name: Faker::ProgrammingLanguage.name
+      key: skill[:key],
+      text: skill[:text],
+      value: skill[:value]
     })
   end
-}
+end
+
+# check if user exists
+def check_user
+  username = Faker::Name.first_name
+  if User.exists?(username: username)
+    check_user()
+  else 
+    create_user(username)
+  end
+end
 
 # create users
-20.times {
+def create_user(user_name)
+  # generate an array of ages between 19-60
+  ages = [*19..60]
+  # generate an array of professions
+  professions = ["Jr. Software Engineer", "DevOps", "Senior Software Engineer", "Technical Support", "IT", "Electronic Engineer"]
+  # array of semantic ui avatars
+  avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
+
   User.create({
-    name: Faker::Name.first_name,
+    username: user_name,
     age: ages.sample,
     profession: professions.sample,
-    avatar: avatars.sample
+    avatar: avatars.sample,
+    password: "123"
   })
+end
+
+20.times {
+  check_user()
 }
 
-# associate skills to users
-User.all.each do |current_user|
-  randomPick.count.times {
-    UserSkill.create({
-      user: current_user,
-      skill: Skill.all.sample
-    })
+# check if UserSkill association exists
+def check_user_skill(current_user)
+  # assign current_user to my_user
+  my_user = current_user
+  # randomly pick a skill instance and assign it to random_skill
+  random_skill = Skill.all.sample
+  # conditionally checks if association exists between skill and user
+  if UserSkill.exists?(skill: random_skill, user: current_user)
+    # invoke check_user_skill recursively if user and skill association already exists
+    check_user_skill(my_user)
+  else
+    # create a new association if user and skill have not been associated
+    create_user_skill(my_user, random_skill)
+  end
+end
+
+# create association
+def create_user_skill(user, skill)
+  UserSkill.create({
+    user: user,
+    skill: skill
+  })
+end
+
+# loop through users
+User.all.each do |current_user| 
+  # loop 5 times for each current user to create 5 different skills
+  5.times {
+    check_user_skill(current_user)
   }
 end
 

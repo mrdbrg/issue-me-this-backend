@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # ====> sessions routes
-  resources :sessions, only: [:create]
-  post '/login', to: 'sessions#login'
+  # resources :sessions, only: [:create]
+  # post '/login', to: 'sessions#login'
 
   # ====> issues routes
   resources :issues, only: [:index, :create, :show, :destroy]
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # delete /issues/:id to: 'issues#destroy'
  
   # ====> users routes
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :create]
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show'
 
