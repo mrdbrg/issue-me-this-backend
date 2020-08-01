@@ -4,6 +4,7 @@ class CreateSkills < ActiveRecord::Migration[6.0]
       t.string :key
       t.string :text
       t.string :value
+      t.string :color
 
       t.timestamps
     end

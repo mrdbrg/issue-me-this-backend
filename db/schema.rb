@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_07_29_205420) do
     t.string "key"
     t.string "text"
     t.string "value"
+    t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

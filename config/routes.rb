@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # ====> sessions routes
+  get '/home', to: 'sessions#home'
   post '/login', to: 'sessions#login'
+  get '/autologin', to: 'sessions#autologin'
 
   # ====> issues routes
   resources :issues, only: [:index, :create, :show, :destroy]
@@ -15,8 +17,9 @@ Rails.application.routes.draw do
   # get '/users/:id', to: 'users#show'
 
   # ====> comments routes
-  resources :comments, only: [:index]
+  resources :comments, only: [:index, :create]
   # get '/comments', to: 'comments#index'
+  # post '/comments', to: 'comments#create'
 
   # ====> skills routes
   resources :skills, only: [:index]

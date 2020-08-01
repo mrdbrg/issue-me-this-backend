@@ -5,24 +5,24 @@ User.destroy_all
 Skill.destroy_all
 
 skills = [
-      { key: 'angular', text: 'Angular', value: 'angular' },
-      { key: 'css', text: 'CSS', value: 'css' },
-      { key: 'design', text: 'Graphic Design', value: 'design' },
-      { key: 'ember', text: 'Ember', value: 'ember' },
-      { key: 'html', text: 'HTML', value: 'html' },
-      { key: 'ia', text: 'Information Architecture', value: 'ia' },
-      { key: 'javascript', text: 'Javascript', value: 'javascript' },
-      { key: 'mech', text: 'Mechanical Engineering', value: 'mech' },
-      { key: 'meteor', text: 'Meteor', value: 'meteor' },
-      { key: 'node', text: 'NodeJS', value: 'node' },
-      { key: 'plumbing', text: 'Plumbing', value: 'plumbing' },
-      { key: 'python', text: 'Python', value: 'python' },
-      { key: 'rails', text: 'Rails', value: 'rails' },
-      { key: 'react', text: 'React', value: 'react' },
-      { key: 'repair', text: 'Kitchen Repair', value: 'repair' },
-      { key: 'ruby', text: 'Ruby', value: 'ruby' },
-      { key: 'ui', text: 'UI Design', value: 'ui' },
-      { key: 'ux', text: 'User Experience', value: 'ux' }
+      { key: 'angular', text: 'Angular', value: 'angular', color: 'red' },
+      { key: 'css', text: 'CSS', value: 'css', color: 'orange' },
+      { key: 'design', text: 'Graphic Design', value: 'design', color: 'yellow' },
+      { key: 'ember', text: 'Ember', value: 'ember', color: 'olive' },
+      { key: 'html', text: 'HTML', value: 'html', color: 'green' },
+      { key: 'ia', text: 'Information Architecture', value: 'ia', color: 'teal' },
+      { key: 'javascript', text: 'Javascript', value: 'javascript', color: 'blue' },
+      { key: 'mech', text: 'Mechanical Engineering', value: 'mech', color: 'violet' },
+      { key: 'meteor', text: 'Meteor', value: 'meteor', color: 'purple' },
+      { key: 'node', text: 'NodeJS', value: 'node', color: 'pink' },
+      { key: 'plumbing', text: 'Plumbing', value: 'plumbing', color: 'brown' },
+      { key: 'python', text: 'Python', value: 'python', color: 'grey' },
+      { key: 'rails', text: 'Rails', value: 'rails', color: 'yellow' },
+      { key: 'react', text: 'React', value: 'react', color: 'green' },
+      { key: 'repair', text: 'Kitchen Repair', value: 'repair', color: 'blue' },
+      { key: 'ruby', text: 'Ruby', value: 'ruby', color: 'black' },
+      { key: 'ui', text: 'UI Design', value: 'ui', color: 'red' },
+      { key: 'ux', text: 'User Experience', value: 'ux', color: 'olive' }
 ]
 
 issues = [
@@ -121,7 +121,8 @@ skills.each do |skill|
     Skill.create({
       key: skill[:key],
       text: skill[:text],
-      value: skill[:value]
+      value: skill[:value],
+      color: skill[:color]
     })
   end
 end
@@ -209,18 +210,18 @@ comments.each do |comment|
   })
 end
 
-tables = [User, Skill, UserSkill, Comment, Issue]
+# tables = [User, Skill, UserSkill, Comment, Issue]
 
-def loadingTables(tables)
-  tables.each do |name| 
-    puts "===> #{name.count} #{name.to_s}s created \n"
-    sleep(1)
-  end
-  sleep(1.5)
-end
+# def loadingTables(tables)
+#   tables.each do |name| 
+#     puts "===> #{name.count} #{name.to_s}s created \n"
+#     sleep(1)
+#   end
+#   sleep(1.5)
+# end
 
-# run method
-loadingTables(tables)
+# # run method
+# loadingTables(tables)
 
 puts "=============================="
 puts "==>         SEEDED         <=="

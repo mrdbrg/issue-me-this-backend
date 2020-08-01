@@ -15,7 +15,7 @@ class IssuesController < ApplicationController
     if newIssue.valid?
       render json: newIssue
     else
-      render json: { message: "Something went wrong while creating this issue."}, status: 400
+      render json: { message: "Something went wrong while creating this issue."}, status: :bad_request
     end
   end
 
