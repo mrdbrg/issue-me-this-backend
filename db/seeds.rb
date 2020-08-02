@@ -115,6 +115,14 @@ comments = [
   }
 ]
 
+# =====> could have used this but it would have given me weird and long emails with possibly different names
+# Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+
+# generates a male or female first name randomly
+def generate_first_name 
+  return [*0..1].sample > 1 ? Faker::Name.male_first_name : Faker::Name.female_first_name
+end
+
 # create skills
 skills.each do |skill| 
   if !Skill.exists?(key: skill[:key])
@@ -129,16 +137,17 @@ end
 
 # check if user exists
 def check_user
-  username = Faker::Name.first_name
-  if User.exists?(username: username)
+  # check if that email has already been saved for a user.
+  first_name_pick = generate_first_name()
+  if User.exists?(email: "#{first_name_pick}@example.com")
     check_user()
   else 
-    create_user(username)
+    create_user(first_name_pick)
   end
 end
 
 # create users
-def create_user(user_name)
+def create_user(picked_name)
   # generate an array of ages between 19-60
   ages = [*19..60]
   # generate an array of professions
@@ -147,7 +156,9 @@ def create_user(user_name)
   avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
 
   User.create({
-    username: user_name,
+    email: ("#{picked_name}@example.com").downcase,
+    first_name: picked_name,
+    last_name: Faker::Name.last_name,
     age: ages.sample,
     profession: professions.sample,
     avatar: avatars.sample,

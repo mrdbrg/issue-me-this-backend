@@ -1,4 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :age, :profession, :avatar
+  attributes :id, :email, :first_name, :last_name, :age, :profession, :avatar
   has_many :issues
 end

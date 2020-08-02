@@ -6,11 +6,13 @@ class IssuesController < ApplicationController
   end
 
   def create
+    user = User.find_by(id: params[:user_id])
     newIssue = Issue.create(
-        title: params[:title], 
-        issue_body: params[:issue_body], 
-        user: User.all.sample # selects a random user
+        title: params[:issue][:title], 
+        issue_body: params[:issue][:issue_body], 
+        user: user
       )
+      # byebug
 
     if newIssue.valid?
       render json: newIssue
@@ -24,10 +26,8 @@ class IssuesController < ApplicationController
     render json: myIssue
   end
 
-  # I may not be able to delete an issue as a user - maybe admin?
-  # def destroy
-  #   myIssue = Issue.find_by(id: params[:id])
-  #   byebug
-  #   myIssue.destroy
-  # end
+  def destroy
+    issue = Issue.find_by(id: params[:id])
+    issue.destroy
+  end
 end

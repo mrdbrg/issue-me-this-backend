@@ -17,9 +17,10 @@ Rails.application.routes.draw do
   # get '/users/:id', to: 'users#show'
 
   # ====> comments routes
-  resources :comments, only: [:index, :create]
+  resources :comments, only: [:index, :create, :destroy]
   # get '/comments', to: 'comments#index'
   # post '/comments', to: 'comments#create'
+  # delete '/comments/:id', to: 'comments#destroy'
 
   # ====> skills routes
   resources :skills, only: [:index]

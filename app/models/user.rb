@@ -5,5 +5,5 @@ class User < ApplicationRecord
   has_many :user_skills
   has_many :skills, through: :user_skills
 
-  validates :username, uniqueness: { case_sensitive: false }
+  validates :email, uniqueness: { case_sensitive: false }
 end

@@ -22,4 +22,9 @@ class CommentsController < ApplicationController
       render json: { message: "Something went wrong while creating this comment." }, status: :bad_request
     end
   end
+
+  def destroy 
+    comment = Comment.find_by(id: paramsp[:id])
+    comment.destroy
+  end
 end

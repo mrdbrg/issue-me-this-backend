@@ -54,7 +54,9 @@ ActiveRecord::Schema.define(version: 2020_07_29_205420) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "email"
+    t.string "first_name"
+    t.string "last_name"
     t.integer "age"
     t.string "profession"
     t.string "avatar"
