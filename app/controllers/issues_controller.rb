@@ -6,18 +6,17 @@ class IssuesController < ApplicationController
   end
 
   def create
-    user = User.find_by(id: params[:user_id])
-    newIssue = Issue.create(
-        title: params[:issue][:title], 
-        issue_body: params[:issue][:issue_body], 
-        user: user
-      )
-      # byebug
+    # find user
+    user = User.find_by(id: params[:id])
 
-    if newIssue.valid?
-      render json: newIssue
+    # if user is valid create new issue
+    issue = Issue.create( title: params[:issue][:title], issue_body: params[:issue][:issue_body], user: user )
+
+    # validates the issue
+    if issue.valid?
+      render json: issue
     else
-      render json: { message: "Something went wrong while creating this issue."}, status: :bad_request
+      render json: { header: "Make sure to be as detailed as possible when you try to help someone.", error: issue.errors.full_messages }, status: :bad_request
     end
   end
 

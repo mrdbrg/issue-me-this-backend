@@ -138,7 +138,7 @@ end
 # check if user exists
 def check_user
   # check if that email has already been saved for a user.
-  first_name_pick = generate_first_name()
+  first_name_pick = generate_first_name().downcase
   if User.exists?(email: "#{first_name_pick}@example.com")
     check_user()
   else 
@@ -156,19 +156,26 @@ def create_user(picked_name)
   avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
 
   User.create({
-    email: ("#{picked_name}@example.com").downcase,
+    email: ("#{picked_name}@example.com"),
     first_name: picked_name,
     last_name: Faker::Name.last_name,
     age: ages.sample,
     profession: professions.sample,
     avatar: avatars.sample,
-    password: "123"
+    password: "1L*vesalami"
   })
 end
 
 20.times {
   check_user()
 }
+
+  # PASSWORD FORMAT
+  # (?=.{8,})          # Must contain 8 or more characters
+  # (?=.*\d)           # Must contain a digit
+  # (?=.*[a-z])        # Must contain a lower case character
+  # (?=.*[A-Z])        # Must contain an upper case character
+  # (?=.*[[:^alnum:]]) # Must contain a symbol
 
 # check if UserSkill association exists
 def check_user_skill(current_user)
@@ -233,6 +240,12 @@ end
 
 # # run method
 # loadingTables(tables)
+
+puts "===> #{User.count} users created \n"
+puts "===> #{Skill.count} skills created \n"
+puts "===> #{Comment.count} comments created \n"
+puts "===> #{UserSkill.count} userskills created \n"
+puts "===> #{Issue.count} issues created \n"
 
 puts "=============================="
 puts "==>         SEEDED         <=="

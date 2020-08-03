@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
 
   def login
     # byebug
-    # find user by username
-    user = User.find_by(username: params[:username])
+    # find user by email
+    user = User.find_by(email: params[:email])
 
     # validates user and password (authentication)
     if user && user.authenticate(params[:password])
@@ -15,13 +15,13 @@ class SessionsController < ApplicationController
       token = JWT.encode({ user_id: user.id }, "not_too_safe", "HS256")
 
       # if it validates to true renders json: user & token ====> run user explicitly through serializer
-      render json: { user: UserSerializer.new(user), token: token }
+      render json: { user: UserSerializer.new(user), token: token, header: "Welcome, #{user.first_name} #{user.last_name}!", message: [], type: "success" }
 
       # default render before authentication ====> implicitly run through serializer
       # render json: user
     else
       # if user is not valid send error message and status
-      render json: { message: "Invalid username or password" }, status: :unauthorized
+      render json: { header: "Uh-oh! Invalid email or password", message: [], type: "error" }, status: :unauthorized
     end
   end
 
@@ -46,7 +46,7 @@ class SessionsController < ApplicationController
     if user 
       render json: user 
     else
-      # if user it doesn't validate renders error message and status
+      # if user doesn't validate renders error message and status
       render json: { message: "Not logged in" }, status: :unauthorized
     end
   end
