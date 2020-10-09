@@ -115,7 +115,7 @@ comments = [
   }
 ]
 
-# =====> could have used this but it would have given me weird and long emails with possibly different names
+# !NOTE! =====> could have used this but it would have given me weird and long emails with possibly different names
 # Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
 
 # generates a male or female first name randomly

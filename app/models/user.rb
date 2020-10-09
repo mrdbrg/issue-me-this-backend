@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :issues
   has_many :user_skills
   has_many :skills, through: :user_skills
-  before_save { self.email = email.downcase }
 
+  before_save { self.email = email.downcase }
   VALID_EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :email, 

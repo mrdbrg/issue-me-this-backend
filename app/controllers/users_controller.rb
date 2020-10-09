@@ -19,12 +19,13 @@ class UsersController < ApplicationController
       email: params[:email], 
       first_name: params[:first_name], 
       last_name: params[:last_name], 
-      age: params[:age], profession: 
-      params[:profession], 
+      age: params[:age], 
+      profession: params[:profession], 
       avatar: params[:avatar], 
       password: params[:password] 
     )
-
+      
+      # byebug
     # if user was successfully created
     if user.valid? 
        # if user is valid collect skills from params
@@ -47,7 +48,6 @@ class UsersController < ApplicationController
 
       # if user is not valid - render error messages (rails validation messages) and status code
       render json: { header: "You need to fulfill these #{user.errors.full_messages.count} password requirements", error: user.errors.full_messages }, status: :bad_request 
-
     end
   end
 end
