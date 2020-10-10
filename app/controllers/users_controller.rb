@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     else
 
       # if user is not valid - render error messages (rails validation messages) and status code
-      render json: { header: "You need to fulfill these #{user.errors.full_messages.count} password requirements", error: user.errors.full_messages }, status: :bad_request 
+      render json: { header: "You need to fulfill these #{user.errors.full_messages.count} password requirements", message: user.errors.full_messages }, status: :bad_request 
     end
   end
 end

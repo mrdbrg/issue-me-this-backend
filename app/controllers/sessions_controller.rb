@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       # render json: user
     else
       # if user is not valid send error message and status
-      render json: { header: "Uh-oh! Invalid email or password", message: [], type: "error" }, status: :unauthorized
+      render json: { header: "Uh-oh! Invalid email or password", message: [], type: "negative" }, status: :unauthorized
     end
   end
 
