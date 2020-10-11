@@ -28,5 +28,7 @@ class IssuesController < ApplicationController
   def destroy
     issue = Issue.find_by(id: params[:id])
     issue.destroy
+
+    render json: issue
   end
 end
