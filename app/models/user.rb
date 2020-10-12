@@ -8,6 +8,18 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   VALID_EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  validates :first_name, 
+            presence: true
+
+  validates :last_name, 
+            presence: true
+
+  validates :profession, 
+            presence: true
+
+  validates :age, 
+            presence: true
+
   validates :email, 
             presence: true,
             length: { maximum: 255 },
@@ -15,7 +27,7 @@ class User < ApplicationRecord
             format: { with: VALID_EMAIL_FORMAT }
 
   validates :password, 
-            presence: true,
+            # presence: true,
             length: { minimum:6, maximum: 255 }
 
   validate :password_lower_case

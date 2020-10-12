@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       first_name: params[:first_name], 
       last_name: params[:last_name], 
       age: params[:age], 
-      profession: params[:profession], 
+      profession: params[:job_title], 
       avatar: params[:avatar], 
       password: params[:password] 
     )
@@ -43,11 +43,11 @@ class UsersController < ApplicationController
       token = JWT.encode({ user_id: user.id }, "not_too_safe", "HS256")
 
       # if it validates to true renders json: user & token ====> run user explicitly through serializer
-      render json: { user: UserSerializer.new(user), token: token }
+      render json: { user: UserSerializer.new(user), token: token,  errorStatus: false }
     else
 
       # if user is not valid - render error messages (rails validation messages) and status code
-      render json: { header: "You need to fulfill these #{user.errors.full_messages.count} password requirements", message: user.errors.full_messages }, status: :bad_request 
+      render json: { header: "You need to fulfill these #{user.errors.full_messages.count} requirements", error: user.errors.full_messages, errorStatus: true }, status: :bad_request 
     end
   end
 end
