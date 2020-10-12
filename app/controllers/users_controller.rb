@@ -8,9 +8,9 @@ class UsersController < ApplicationController
 
   def show
     user = User.find_by(id: params[:id])
-    skills = UserSkill.all.find_all { |s|  s.user_id === user.id }.collect { |s| s.skill }
+    # skills = UserSkill.all.find_all { |s|  s.user_id === user.id }.collect { |s| s.skill }
     
-    render json: { user: UserSerializer.new(user), skills: skills }
+    render json: { user: UserSerializer.new(user) }
   end
 
   def create

@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     # validates comment
     if comment.valid?
 
-      render json: { comment: CommentSerializer.new(comment), issue: IssueSerializer.new(issue), errorStatus: false }
+      render json: { issue: IssueSerializer.new(issue), errorStatus: false }
     else
       # return comment errors
       render json: { header: "#{comment.errors.full_messages.count} errors occured with your submission", error: comment.errors.full_messages, errorStatus: true  }, status: :bad_request
