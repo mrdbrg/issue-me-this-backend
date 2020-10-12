@@ -15,13 +15,13 @@ class SessionsController < ApplicationController
       token = JWT.encode({ user_id: user.id }, "not_too_safe", "HS256")
 
       # if it validates to true renders json: user & token ====> run user explicitly through serializer
-      render json: { user: UserSerializer.new(user), token: token, header: "Welcome, #{user.first_name} #{user.last_name}!", message: [], type: "success" }
+      render json: { user: UserSerializer.new(user), token: token, header: "Welcome, #{user.first_name} #{user.last_name}!", errorStatus: false }
 
       # default render before authentication ====> implicitly run through serializer
       # render json: user
     else
       # if user is not valid send error message and status
-      render json: { header: "Uh-oh! Invalid email or password", message: [], type: "negative" }, status: :unauthorized
+      render json: { header: "Uh-oh! Invalid email or password", error: [], errorStatus: true }, status: :unauthorized
     end
   end
 
