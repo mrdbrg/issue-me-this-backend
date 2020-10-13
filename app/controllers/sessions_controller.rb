@@ -19,9 +19,11 @@ class SessionsController < ApplicationController
 
       # default render before authentication ====> implicitly run through serializer
       # render json: user
+    elsif params[:password] == nil && params[:email] == nil
+      render json: { header: "Please enter your email and password", error: [], errorStatus: true }, status: :unauthorized      
     else
       # if user is not valid send error message and status
-      render json: { header: "Uh-oh! Invalid email or password", error: [], errorStatus: true }, status: :unauthorized
+      render json: { header: "Invalid email or password", error: [], errorStatus: true }, status: :unauthorized
     end
   end
 
