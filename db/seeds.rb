@@ -62,56 +62,43 @@ issues = [
 
 comments = [
   {
-    title: "This questions has been answered.",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "This questions has been answered."
   },
   {
-    title: "I know that one...",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "I know that one..."
   },
   {
-    title: "I can't wait to be like you guys",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "I can't wait to be like you guys"
   },
   {
-    title: "Simple",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "Simple"
   },
   {
-    title: "Check out Marlon algorithm blog post!",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "Check out Marlon algorithm blog post!"
   },
   {
-    title: "My friend Marlon wants to work in the field! Are you hiring?",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "My friend Marlon wants to work in the field! Are you hiring?"
   },
   {
-    title: "I got this one!",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "I got this one!"
   },
   {
-    title: "JUST FIXED IT!!!",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "JUST FIXED IT!!!"
   },
   {
-    title: "Don't be afraid to ask questions. That's how you learn!",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "Don't be afraid to ask questions. That's how you learn!"
   },
   {
-    title: "I drank so much coffee right now! This is the 39th issue I help solving.",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "I drank so much coffee right now! This is the 39th issue I help solving."
   },
   {
-    title: "Dude, relax! I got you.",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "Dude, relax! I got you."
   },
   {
-    title: "It booOOthers me",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "It booOOthers me"
   },
   {
-    title: "Franklin, you better be watching this.",
-    comment_body: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, necessitatibus!"
+    comment_body: "Franklin, you better be watching this."
   }
 ]
 
@@ -221,7 +208,6 @@ end
 # create comments and associate them to issues and users
 comments.each do |comment|
   Comment.create({
-    title: comment[:title],
     comment_body: comment[:comment_body],
     issue: Issue.all.sample,
     user: User.all.sample

@@ -14,7 +14,7 @@ class IssuesController < ApplicationController
 
     # validates the issue
     if issue.valid?
-      render json: issue
+      render json: { issue: IssueSerializer.new(issue), user: UserSerializer.new(user) }
     else
       render json: { header: "Make sure to be as detailed as possible when you try to help someone.", error: issue.errors.full_messages, errorStatus: true }, status: :bad_request
     end
