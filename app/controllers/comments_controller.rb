@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   def index
+    # comments = Comment.all.order('created_at ASC')
     comments = Comment.all
 
     render json: comments
@@ -11,16 +12,13 @@ class CommentsController < ApplicationController
 
     # if both the user and the issue were value 
     comment = Comment.create(
-      title: params[:comment][:title],
       comment_body: params[:comment][:comment_body],
       user: user,
       issue: issue
     )
-    
     # validates comment
     if comment.valid?
-
-      render json: { issue: IssueSerializer.new(issue), errorStatus: false }
+      render json: { issue: IssueSerializer.new(issue), comment: CommentSerializer.new(comment), errorStatus: false }
     else
       # return comment errors
       render json: { header: "#{comment.errors.full_messages.count} errors occured with your submission", error: comment.errors.full_messages, errorStatus: true  }, status: :bad_request
@@ -29,6 +27,8 @@ class CommentsController < ApplicationController
 
   def destroy 
     comment = Comment.find_by(id: params[:id])
+    issue = Issue.find_by(id: comment.issue_id)
     comment.destroy
+    render json: {comment: CommentSerializer.new(comment), issue: IssueSerializer.new(issue)}
   end
 end
