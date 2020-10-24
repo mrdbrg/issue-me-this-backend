@@ -13,6 +13,8 @@ class CommentsController < ApplicationController
     # if both the user and the issue were value 
     comment = Comment.create(
       comment_body: params[:comment][:comment_body],
+      code_body: params[:comment][:code_body],
+      syntax: params[:comment][:syntax],
       user: user,
       issue: issue
     )
