@@ -10,7 +10,7 @@ class IssuesController < ApplicationController
     user = User.find_by(id: params[:id])
 
     # if user is valid create new issue
-    issue = Issue.create( title: params[:issue][:title], issue_body: params[:issue][:issue_body], user: user )
+    issue = Issue.create( title: params[:issue][:title], issue_body: params[:issue][:issue_body], syntax: params[:issue][:syntax], user: user )
 
     # validates the issue
     if issue.valid?
