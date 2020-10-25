@@ -6,4 +6,7 @@ class Comment < ApplicationRecord
             presence: true,
             length: { minimum: 5, maximum: 1000 }
 
+  validates :syntax,
+            presence: true
+
 end

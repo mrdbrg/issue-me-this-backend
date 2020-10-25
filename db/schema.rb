@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_205420) do
 
   create_table "comments", force: :cascade do |t|
     t.text "comment_body"
-    t.text "code_body"
     t.string "syntax"
     t.bigint "issue_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -31,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_205420) do
     t.string "title"
     t.string "syntax"
     t.text "issue_body"
-    t.text "code_body"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

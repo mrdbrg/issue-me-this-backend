@@ -29,80 +29,72 @@ issues = [
   {
     title: "Why is processing a sorted array faster than processing an unsorted array?",
     syntax: "javascript",
-    issue_body: "Here is a piece of C++ code that shows some very peculiar behavior. For some strange reason, sorting the data miraculously makes the code almost six times faster",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "Here is a piece of C++ code that shows some very peculiar behavior. For some strange reason, sorting the data miraculously makes the code almost six times faster ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
   },
   {
     title: "How do I undo the most recent local commits in Git?",
     syntax: "javascript",
-    issue_body: "I accidentally committed the wrong files to Git, but I haven't pushed the commit to the server yet. How can I undo those commits from the local repository?",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "I accidentally committed the wrong files to Git, but I haven't pushed the commit to the server yet. How can I undo those commits from the local repository? ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
 
   },
   {
     title: "How do I delete a Git branch locally and remotely?",
     syntax: "javascript",
-    issue_body: "I want to delete a branch both locally and remotely. Failed Attempts to Delete a Remote Branch $ git branch -d remotes/origin/bugfix error: branch 'remotes/origin/bugfix' not found.",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "I want to delete a branch both locally and remotely. Failed Attempts to Delete a Remote Branch $ git branch -d remotes/origin/bugfix error: branch 'remotes/origin/bugfix' not found. ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
 
   },
   {
     title: "What does the 'yield' keyword do?",
     syntax: "javascript",
-    issue_body: "What is the use of the yield keyword in Python, and what does it do? For example, I'm trying to understand this code:",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "What is the use of the yield keyword in Python, and what does it do? For example, I'm trying to understand this code: ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
 
   },
   {
     title: "How do I undo 'git add' before commit?",
     syntax: "javascript",
-    issue_body: "I mistakenly added files to Git using the command: git add myfile.txt I have not yet run git commit. Is there a way to undo this, so these files won't be included in the commit?",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "I mistakenly added files to Git using the command: git add myfile.txt I have not yet run git commit. Is there a way to undo this, so these files won't be included in the commit? ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
 
   },
   {
     title: "What is the correct JSON content type?",
     syntax: "javascript",
-    issue_body: "I've been messing around with JSON for some time, just pushing it out as text and it hasn't hurt anybody (that I know of), but I'd like to start doing things properly. I have seen so many purported",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "I've been messing around with JSON for some time, just pushing it out as text and it hasn't hurt anybody (that I know of), but I'd like to start doing things properly. I have seen so many purported ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
 
   },
   {
     title: "What is the '-->' operator in C++?",
     syntax: "javascript",
-    issue_body: "After reading Hidden Features and Dark Corners of C++/STL on comp.lang.c++.moderated, I was completely surprised that the following snippet compiled and worked in both Visual Studio 2008 and G++ 4.4",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "After reading Hidden Features and Dark Corners of C++/STL on comp.lang.c++.moderated, I was completely surprised that the following snippet compiled and worked in both Visual Studio 2008 and G++ 4.4 ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
 
   },
   {
     title: "How do I rename a local Git branch?",
     syntax: "javascript",
-    issue_body: "I don't want to rename a remote branch, as described in Rename master branch for both local and remote Git repositories. How can I rename a local branch which hasn't been pushed to a remote branch?",
-    code_body: "const handleDismissCountDown = () => {
+    issue_body: "I don't want to rename a remote branch, as described in Rename master branch for both local and remote Git repositories. How can I rename a local branch which hasn't been pushed to a remote branch? ```const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000)```"
 
   }
 ]
@@ -110,107 +102,91 @@ issues = [
 comments = [
   {
     syntax: "javascript",
-    comment_body: "This questions has been answered.",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "This questions has been answered. ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "I know that one...",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "I know that one... ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "I can't wait to be like you guys",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "I can't wait to be like you guys ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "Simple",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "Simple ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "Check out Marlon algorithm blog post!",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "Check out Marlon algorithm blog post! ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "My friend Marlon wants to work in the field! Are you hiring?",
-    code_body: "const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)"
+    comment_body: "My friend Marlon wants to work in the field! Are you hiring?"
   },
   {
     syntax: "javascript",
-    comment_body: "I got this one!",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "I got this one! ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "JUST FIXED IT!!!",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "JUST FIXED IT!!! ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "Don't be afraid to ask questions. That's how you learn!",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "Don't be afraid to ask questions. That's how you learn! ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "I drank so much coffee right now! This is the 39th issue I help solving.",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "I drank so much coffee right now! This is the 39th issue I help solving. ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "Dude, relax! I got you.",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "Dude, relax! I got you. ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "It booOOthers me",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "It booOOthers me ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   },
   {
     syntax: "javascript",
-    comment_body: "Franklin, you better be watching this.",
-    code_body: "const handleDismissCountDown = () => {
+    comment_body: "Franklin, you better be watching this. ``` const handleDismissCountDown = () => {
       setTimeout(() => {
         setAlertStatus(false)
-      }, 4000)"
+      }, 4000) ```"
   }
 ]
 
@@ -313,7 +289,6 @@ issues.each do |issue|
   Issue.create({
     title: issue[:title],
     issue_body: issue[:issue_body],
-    code_body: issue[:code_body],
     syntax: issue[:syntax],
     user: User.all.sample
   })
@@ -323,6 +298,7 @@ end
 comments.each do |comment|
   Comment.create({
     comment_body: comment[:comment_body],
+    syntax: comment[:syntax],
     issue: Issue.all.sample,
     user: User.all.sample
   })

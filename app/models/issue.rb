@@ -11,10 +11,6 @@ class Issue < ApplicationRecord
             presence: true, 
             length: { minimum: 2, maximum: 1000 }
 
-  validates :code_body,
-            presence: true, 
-            length: { minimum: 2, maximum: 1000 }
-
   validates :syntax,
             presence: true
 

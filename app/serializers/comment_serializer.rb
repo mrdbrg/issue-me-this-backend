@@ -1,5 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :id, :comment_body, :code_body, :syntax, :issue_id
+  attributes :id, :comment_body, :syntax, :issue_id
   belongs_to :user
 
   # # Source Article for the code below: https://medium.com/@stellamarisnjage/serializing-deeply-nested-associations-in-rails-2173d588c528
