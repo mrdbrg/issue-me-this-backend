@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/autologin', to: 'sessions#autologin'
 
   # ====> issues routes
-  resources :issues, only: [:index, :create, :show, :destroy]
+  resources :issues, only: [:index, :create, :update, :show, :destroy]
   # get '/issues', to: 'issues#index'
   # post '/issues', to: 'issues#create'
   # get /issues/:id, to: 'issues#show'
