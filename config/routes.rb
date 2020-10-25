@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get '/issues', to: 'issues#index'
   # post '/issues', to: 'issues#create'
   # get /issues/:id, to: 'issues#show'
+  # patch /issues/:id, to: 'issues#update'
   # delete /issues/:id to: 'issues#destroy'
  
   # ====> users routes

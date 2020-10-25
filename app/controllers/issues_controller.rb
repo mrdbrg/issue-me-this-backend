@@ -21,7 +21,18 @@ class IssuesController < ApplicationController
   end
 
   def update
-    byebug
+    issue = Issue.find_by(id: params[:id])
+    issue.update(title: params[:title])
+
+    issue.update(title: params[:title])
+    issue.update(issue_body: params[:issue_body])
+    # issue.update(syntax: params[:syntax]) 
+
+    if issue.valid? 
+      render json: { issue: IssueSerializer.new(issue) }
+    else
+      render json: { header: "Make sure to be as detailed as possible when you try to help someone.", error: issue.errors.full_messages, errorStatus: true }, status: :bad_request
+    end
   end
 
   def show
