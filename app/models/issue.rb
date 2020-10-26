@@ -1,7 +1,11 @@
 class Issue < ApplicationRecord
-  has_many :comments, dependent: :destroy
-  accepts_nested_attributes_for :comments
   belongs_to :user
+  has_many :comments, dependent: :destroy
+
+  has_many :like_issues, dependent: :destroy
+  has_many :users, through: :like_issues
+  
+  accepts_nested_attributes_for :comments
 
   validates :title, 
             presence: true,

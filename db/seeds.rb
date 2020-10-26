@@ -304,6 +304,21 @@ comments.each do |comment|
   })
 end
 
+marlon = User.create(
+  email: "marlon@example.com",
+  first_name: "Marlon",
+  last_name: "Braga",
+  age: 31,
+  profession: "Jr. Software Engineer",
+  avatar: "chris",
+  password: "1L*vesalami"
+)
+
+LikeIssue.create(
+  user: marlon,
+  issue: Issue.first
+)
+
 # tables = [User, Skill, UserSkill, Comment, Issue]
 
 # def loadingTables(tables)
