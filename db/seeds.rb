@@ -304,6 +304,16 @@ comments.each do |comment|
   })
 end
 
+
+# marcelo = User.create(
+#   email: "marcelo@example.com",
+#   first_name: "Marcelo",
+#   last_name: "Souza",
+#   age: 61,
+#   profession: "Senior Software Engineer",
+#   avatar: "daniel",
+#   password: "1L*vesalami"
+# )
 marlon = User.create(
   email: "marlon@example.com",
   first_name: "Marlon",
@@ -314,20 +324,21 @@ marlon = User.create(
   password: "1L*vesalami"
 )
 
-marcelo = User.create(
-  email: "marcelo@example.com",
-  first_name: "Marcelo",
-  last_name: "Souza",
-  age: 61,
-  profession: "Senior Software Engineer",
-  avatar: "daniel",
-  password: "1L*vesalami"
-)
-
 LikeIssue.create(
   is_like: true,
   user: marlon,
-  issue: Issue.last
+  issue: Issue.first
+)
+LikeIssue.create(
+  is_like: true,
+  user: marlon,
+  issue: Issue.second
+)
+
+LikeIssue.create(
+  is_like: false,
+  user: marlon,
+  issue: Issue.third
 )
 
 LikeIssue.create(
@@ -338,9 +349,15 @@ LikeIssue.create(
 
 LikeIssue.create(
   is_like: true,
-  user: marcelo,
+  user: marlon,
   issue: Issue.last
 )
+
+# LikeIssue.create(
+#   is_like: true,
+#   user: marcelo,
+#   issue: Issue.last
+# )
 
 
 # tables = [User, Skill, UserSkill, Comment, Issue]

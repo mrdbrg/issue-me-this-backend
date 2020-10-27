@@ -6,9 +6,11 @@ class LikeIssuesController < ApplicationController
   end
 
   def destroy 
-    like = LikeIssue.find_by(issue_id: params[:id], user_id: 21)
     # byebug
+    like = LikeIssue.find_by(issue_id: params[:id], user: params[:user_id])
+    issue = Issue.find_by(id: like.issue_id)
+    user = User.find_by(id: params[:user_id])
     like.destroy
-    render json: {like: LikeIssueSerializer.new(like)}
+    render json: {like: LikeIssueSerializer.new(like), user: UserSerializer.new(user), issue: IssueSerializer.new(issue)}
   end
 end
