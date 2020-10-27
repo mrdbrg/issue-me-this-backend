@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   # patch /issues/:id, to: 'issues#update'
   # delete /issues/:id to: 'issues#destroy'
 
-  resources :like_issues, only: [:index, :create]
-  delete '/like_issues/:id/user/:user_id', to: 'like_issues#destroy'
+  resources :like_issues, only: [:index, :create, :destroy]
+  # delete '/like_issues/:id', to: 'like_issues#destroy'
 
   # ====> users routes
   resources :users, only: [:index, :show, :create]

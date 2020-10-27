@@ -327,30 +327,27 @@ marlon = User.create(
 LikeIssue.create(
   is_like: true,
   user: marlon,
-  issue: Issue.first
+  issue: Issue.all[0]
 )
 LikeIssue.create(
   is_like: true,
   user: marlon,
-  issue: Issue.second
+  issue: Issue.all[1]
 )
-
-LikeIssue.create(
-  is_like: false,
-  user: marlon,
-  issue: Issue.third
-)
-
-LikeIssue.create(
-  is_like: false,
-  user: marlon,
-  issue: Issue.fourth
-)
-
 LikeIssue.create(
   is_like: true,
   user: marlon,
-  issue: Issue.last
+  issue: Issue.all[2]
+)
+LikeIssue.create(
+  is_like: false,
+  user: marlon,
+  issue: Issue.all[3]
+)
+LikeIssue.create(
+  is_like: false,
+  user: marlon,
+  issue: Issue.all[4]
 )
 
 # LikeIssue.create(

@@ -1,3 +1,3 @@
 class LikeIssueSerializer < ActiveModel::Serializer
-  attributes :id, :user, :issue, :is_like
+  attributes :id, :user_id, :issue_id, :is_like
 end
