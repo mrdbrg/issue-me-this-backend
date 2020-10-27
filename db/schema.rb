@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_021455) do
   end
 
   create_table "like_issues", force: :cascade do |t|
+    t.string "is_like"
     t.bigint "issue_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
