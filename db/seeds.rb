@@ -350,6 +350,16 @@ LikeIssue.create(
   issue: Issue.all[4]
 )
 
+Favorite.create(
+  user: marlon,
+  issue: Issue.all[1]
+)
+
+Favorite.create(
+  user: marlon,
+  issue: Issue.all[2]
+)
+
 # LikeIssue.create(
 #   is_like: true,
 #   user: marcelo,

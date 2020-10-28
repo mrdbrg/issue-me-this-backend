@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   # delete /issues/:id to: 'issues#destroy'
 
   resources :like_issues, only: [:index, :create, :destroy]
-  # delete '/like_issues/:id', to: 'like_issues#destroy'
+
+  resources :favorites, only: [:index, :create, :destroy]
 
   # ====> users routes
   resources :users, only: [:index, :show, :create]

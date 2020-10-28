@@ -6,11 +6,11 @@ class LikeIssuesController < ApplicationController
   end
 
   def create 
-    user = User.find_by(id: params[:user_id])
     issue = Issue.find_by(id: params[:issue_id])
+
     like = LikeIssue.create(
       is_like: params[:like_status],
-      user_id: user.id,
+      user_id: params[:user_id],
       issue_id: issue.id
     )
 
@@ -23,7 +23,6 @@ class LikeIssuesController < ApplicationController
   end
 
   def destroy 
-    # byebug
     like = LikeIssue.find_by(id: params[:id])
     issue = Issue.find_by(id: like.issue_id)
     like.destroy

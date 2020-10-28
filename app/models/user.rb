@@ -3,6 +3,9 @@ class User < ApplicationRecord
   has_many :comments
   has_many :issues
 
+  has_many :favorites, dependent: :destroy
+  has_many :issues, through: :favorites
+
   has_many :like_issues, dependent: :destroy
   has_many :issues, through: :like_issues
 
