@@ -304,16 +304,6 @@ comments.each do |comment|
   })
 end
 
-
-# marcelo = User.create(
-#   email: "marcelo@example.com",
-#   first_name: "Marcelo",
-#   last_name: "Souza",
-#   age: 61,
-#   profession: "Senior Software Engineer",
-#   avatar: "daniel",
-#   password: "1L*vesalami"
-# )
 marlon = User.create(
   email: "marlon@example.com",
   first_name: "Marlon",
@@ -323,62 +313,74 @@ marlon = User.create(
   avatar: "chris",
   password: "1L*vesalami"
 )
+marcelo = User.create(
+  email: "marcelo@example.com",
+  first_name: "Marcelo",
+  last_name: "Souza",
+  age: 61,
+  profession: "Senior Software Engineer",
+  avatar: "christian",
+  password: "1L*vesalami"
+)
+marcio = User.create(
+  email: "marcio@example.com",
+  first_name: "Marcio",
+  last_name: "Costa",
+  age: 64,
+  profession: "Senior Software Engineer",
+  avatar: "daniel",
+  password: "1L*vesalami"
+)
 
 LikeIssue.create(
   is_like: true,
   user: marlon,
-  issue: Issue.all[0]
-)
-LikeIssue.create(
-  is_like: true,
-  user: marlon,
-  issue: Issue.all[1]
-)
-LikeIssue.create(
-  is_like: true,
-  user: marlon,
-  issue: Issue.all[2]
-)
-LikeIssue.create(
-  is_like: false,
-  user: marlon,
-  issue: Issue.all[3]
-)
-LikeIssue.create(
-  is_like: false,
-  user: marlon,
-  issue: Issue.all[4]
+  issue: Issue.find_by(id: 1)
 )
 
-Favorite.create(
-  user: marlon,
-  issue: Issue.all[1]
+LikeIssue.create(
+  is_like: true,
+  user: marcelo,
+  issue: Issue.find_by(id: 1)
 )
 
-Favorite.create(
-  user: marlon,
-  issue: Issue.all[2]
+LikeIssue.create(
+  is_like: true,
+  user: marcio,
+  issue: Issue.find_by(id: 1)
 )
 
 # LikeIssue.create(
 #   is_like: true,
-#   user: marcelo,
-#   issue: Issue.last
+#   user: marlon,
+#   issue: Issue.find_by(id: 3)
+# )
+# LikeIssue.create(
+#   is_like: false,
+#   user: marlon,
+#   issue: Issue.find_by(id: 4)
+# )
+# LikeIssue.create(
+#   is_like: false,
+#   user: marlon,
+#   issue: Issue.find_by(id: 5)
 # )
 
+Favorite.create(
+  user: marlon,
+  issue: Issue.find_by(id: 6)
+)
 
-# tables = [User, Skill, UserSkill, Comment, Issue]
+Favorite.create(
+  user: marlon,
+  issue: Issue.find_by(id: 3)
+)
 
-# def loadingTables(tables)
-#   tables.each do |name| 
-#     puts "===> #{name.count} #{name.to_s}s created \n"
-#     sleep(1)
-#   end
-#   sleep(1.5)
-# end
+Favorite.create(
+  user: marlon,
+  issue: Issue.find_by(id: 7)
+)
 
-# # run method
-# loadingTables(tables)
 
 puts "===> #{User.count} users created \n"
 puts "===> #{Skill.count} skills created \n"

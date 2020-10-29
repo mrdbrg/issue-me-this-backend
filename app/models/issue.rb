@@ -1,13 +1,9 @@
 class Issue < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
-
-  has_many :favorites, dependent: :destroy
-  has_many :users, through: :favorites
-
   has_many :like_issues, dependent: :destroy
-  has_many :users, through: :like_issues
-  
+  has_many :favorites, dependent: :destroy
+
   accepts_nested_attributes_for :comments
 
   validates :title, 

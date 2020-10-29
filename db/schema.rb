@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_233302) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.boolean "favorite", default: true, null: false
     t.bigint "user_id", null: false
     t.bigint "issue_id", null: false
     t.datetime "created_at", precision: 6, null: false
