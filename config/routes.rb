@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   # patch /issues/:id, to: 'issues#update'
   # delete /issues/:id to: 'issues#destroy'
 
+  # ====> like_issues routes
   resources :like_issues, only: [:index, :create, :destroy]
-
+  
+  # ====> favorites routes
   resources :favorites, only: [:index, :create, :destroy]
 
   # ====> users routes
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   # get '/users/:id', to: 'users#show'
 
   # ====> comments routes
-  resources :comments, only: [:index, :create, :destroy]
+  resources :comments, only: [:index, :create, :update, :destroy]
   # get '/comments', to: 'comments#index'
   # post '/comments', to: 'comments#create'
   # delete '/comments/:id', to: 'comments#destroy'

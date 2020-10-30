@@ -26,6 +26,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+    comment = Comment.find_by(id: params[:id])
+
+    comment.update(comment_body: params[:comment_body])
+    # comment.update(syntax: params[:syntax])
+
+    if comment.valid? 
+      render json: { comment: CommentSerializer.new(comment), errorStatus: false }
+    else
+      render json: { header: "Make sure to be as detailed as possible.", error: comment.errors.full_messages, errorStatus: true }, status: :bad_request
+    end
+  end
+
   def destroy 
     comment = Comment.find_by(id: params[:id])
     issue = Issue.find_by(id: comment.issue_id)
