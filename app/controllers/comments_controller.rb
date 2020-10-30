@@ -27,6 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def update
+    # byebug
     comment = Comment.find_by(id: params[:id])
 
     comment.update(comment_body: params[:comment_body])
