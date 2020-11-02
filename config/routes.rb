@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :create, :destroy]
 
   # ====> users routes
-  resources :users, only: [:index, :show, :create]
+  resources :users, only: [:index, :show, :update, :create]
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show'
 

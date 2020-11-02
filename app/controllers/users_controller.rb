@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     # if user was successfully created
     if user.valid? 
        # if user is valid collect skills from params
-      top_skills = Skill.all.find_all { |skill| params[:topSkills].include?(skill[:text]) }
+      top_skills = Skill.all.find_all { |skill| params[:topSkills].include?(skill[:value]) }
 
       # if user is valid create association between new user and skills
       top_skills.each do |topSkill|
@@ -50,4 +50,56 @@ class UsersController < ApplicationController
       render json: { header: "You need to fulfill these #{user.errors.full_messages.count} requirements", error: user.errors.full_messages, errorStatus: true }, status: :bad_request 
     end
   end
+
+  def update 
+    # byebug
+    user = User.find_by(id: params[:id])
+    new_skills = []
+    remove_skills = []
+
+    if params[:password] == "" 
+      new_password = user[:password_digest]
+    else
+      new_password = params[:password]
+    end
+
+    # byebug
+    if params[:removeSkills].count != 0
+      remove_skills = params[:removeSkills]
+
+      remove_skills.each do |sk|
+        skill = Skill.find_by(value: sk)
+        UserSkill.find_by(user: user, skill: skill).destroy
+      end
+    end
+
+    # byebug
+    if params[:newSkills].count != 0
+      new_skills = params[:newSkills]
+
+      new_skills.each do |sk|
+        skill = Skill.find_by(value: sk)
+        UserSkill.create( user: user, skill: skill )
+      end
+    end
+
+    # byebug
+    user.update(
+      email: params[:email], 
+      first_name: params[:first_name], 
+      last_name: params[:last_name], 
+      profession: params[:job_title], 
+      avatar: params[:avatar], 
+      password: new_password 
+    )
+
+    # byebug
+    if user.valid?
+      render json: { user: UserSerializer.new(user) }
+    else
+      render json: { header: "You need to fulfill these #{user.errors.full_messages.count} requirements", error: user.errors.full_messages, errorStatus: true }, status: :bad_request 
+    end
+  end
+
+
 end

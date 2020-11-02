@@ -195,7 +195,7 @@ comments = [
 
 # generates a male or female first name randomly
 def generate_first_name 
-  return [*0..1].sample > 1 ? Faker::Name.male_first_name : Faker::Name.female_first_name
+  return [*0..2].sample > 1 ? Faker::Name.male_first_name : Faker::Name.female_first_name
 end
 
 # create skills
@@ -217,7 +217,7 @@ def check_user
   if User.exists?(email: "#{first_name_pick}@example.com")
     check_user()
   else 
-    create_user(first_name_pick)
+    create_user(first_name_pick.titleize)
   end
 end
 
@@ -379,6 +379,16 @@ Favorite.create(
 Favorite.create(
   user: marlon,
   issue: Issue.find_by(id: 7)
+)
+
+UserSkill.create(
+  user: marlon,
+  skill: Skill.first
+)
+
+UserSkill.create(
+  user: marlon,
+  skill: Skill.second
 )
 
 
