@@ -4,6 +4,8 @@ class Issue < ApplicationRecord
   has_many :like_issues, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  self.per_page = 5
+
   accepts_nested_attributes_for :comments
 
   validates :title, 

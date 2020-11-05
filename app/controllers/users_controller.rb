@@ -19,8 +19,8 @@ class UsersController < ApplicationController
       email: params[:email], 
       first_name: params[:first_name], 
       last_name: params[:last_name], 
-      age: params[:age], 
-      profession: params[:job_title], 
+      job_title: params[:job_title], 
+      birthday: params[:birthday], 
       avatar: params[:avatar], 
       password: params[:password] 
     )
@@ -29,13 +29,13 @@ class UsersController < ApplicationController
     # if user was successfully created
     if user.valid? 
        # if user is valid collect skills from params
-      top_skills = Skill.all.find_all { |skill| params[:topSkills].include?(skill[:value]) }
+      top_skills = Skill.all.find_all { |skill| params[:top_skills].include?(skill[:value]) }
 
       # if user is valid create association between new user and skills
-      top_skills.each do |topSkill|
+      top_skills.each do |sk|
         UserSkill.create(
           user: user,
-          skill: topSkill
+          skill: sk
         )
       end
 
@@ -64,8 +64,8 @@ class UsersController < ApplicationController
     end
 
     # byebug
-    if params[:removeSkills].count != 0
-      remove_skills = params[:removeSkills]
+    if params[:remove_skills].count != 0
+      remove_skills = params[:remove_skills]
 
       remove_skills.each do |sk|
         skill = Skill.find_by(value: sk)
@@ -74,8 +74,8 @@ class UsersController < ApplicationController
     end
 
     # byebug
-    if params[:newSkills].count != 0
-      new_skills = params[:newSkills]
+    if params[:new_skills].count != 0
+      new_skills = params[:new_skills]
 
       new_skills.each do |sk|
         skill = Skill.find_by(value: sk)
@@ -88,7 +88,8 @@ class UsersController < ApplicationController
       email: params[:email], 
       first_name: params[:first_name], 
       last_name: params[:last_name], 
-      profession: params[:job_title], 
+      job_title: params[:job_title], 
+      birthday: params[:birthday], 
       avatar: params[:avatar], 
       password: new_password 
     )

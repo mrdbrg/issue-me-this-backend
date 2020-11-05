@@ -225,8 +225,8 @@ end
 def create_user(picked_name)
   # generate an array of ages between 19-60
   ages = [*19..60]
-  # generate an array of professions
-  professions = ["Jr. Software Engineer", "DevOps", "Senior Software Engineer", "Technical Support", "IT", "Electronic Engineer"]
+  # generate an array of job_titles
+  job_titles = ["Jr. Software Engineer", "DevOps", "Senior Software Engineer", "Technical Support", "IT", "Electronic Engineer"]
   # array of semantic ui avatars
   avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
 
@@ -234,8 +234,8 @@ def create_user(picked_name)
     email: ("#{picked_name}@example.com"),
     first_name: picked_name,
     last_name: Faker::Name.last_name,
-    age: ages.sample,
-    profession: professions.sample,
+    birthday: "07/27/1994",
+    job_title: job_titles.sample,
     avatar: avatars.sample,
     password: "1L*vesalami"
   })
@@ -244,13 +244,6 @@ end
 20.times {
   check_user()
 }
-
-  # PASSWORD FORMAT
-  # (?=.{8,})          # Must contain 8 or more characters
-  # (?=.*\d)           # Must contain a digit
-  # (?=.*[a-z])        # Must contain a lower case character
-  # (?=.*[A-Z])        # Must contain an upper case character
-  # (?=.*[[:^alnum:]]) # Must contain a symbol
 
 # check if UserSkill association exists
 def check_user_skill(current_user)
@@ -308,8 +301,8 @@ marlon = User.create(
   email: "marlon@example.com",
   first_name: "Marlon",
   last_name: "Braga",
-  age: 31,
-  profession: "Jr. Software Engineer",
+  birthday: "07/27/1994",
+  job_title: "Jr. Software Engineer",
   avatar: "chris",
   password: "1L*vesalami"
 )
@@ -317,8 +310,8 @@ marcelo = User.create(
   email: "marcelo@example.com",
   first_name: "Marcelo",
   last_name: "Souza",
-  age: 61,
-  profession: "Senior Software Engineer",
+  birthday: "07/27/1994",
+  job_title: "Senior Software Engineer",
   avatar: "christian",
   password: "1L*vesalami"
 )
@@ -326,8 +319,8 @@ marcio = User.create(
   email: "marcio@example.com",
   first_name: "Marcio",
   last_name: "Costa",
-  age: 64,
-  profession: "Senior Software Engineer",
+  birthday: "07/27/1994",
+  job_title: "Senior Software Engineer",
   avatar: "daniel",
   password: "1L*vesalami"
 )
