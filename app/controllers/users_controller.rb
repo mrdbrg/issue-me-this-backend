@@ -52,7 +52,6 @@ class UsersController < ApplicationController
   end
 
   def update 
-    # byebug
     user = User.find_by(id: params[:id])
     new_skills = []
     remove_skills = []
