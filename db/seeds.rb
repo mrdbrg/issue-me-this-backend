@@ -29,72 +29,229 @@ issues = [
   {
     title: "Why is processing a sorted array faster than processing an unsorted array?",
     syntax: "javascript",
-    issue_body: "Here is a piece of C++ code that shows some very peculiar behavior. For some strange reason, sorting the data miraculously makes the code almost six times faster ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "
+        Here is a piece of C++ code that shows some very peculiar behavior. For some strange reason, sorting the data miraculously makes the code almost six times faster First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
   },
   {
     title: "How do I undo the most recent local commits in Git?",
     syntax: "javascript",
-    issue_body: "I accidentally committed the wrong files to Git, but I haven't pushed the commit to the server yet. How can I undo those commits from the local repository? ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "I accidentally committed the wrong files to Git, but I haven't pushed the commit to the server yet. How can I undo those commits from the local repository?
+        First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
 
   },
   {
     title: "How do I delete a Git branch locally and remotely?",
     syntax: "javascript",
-    issue_body: "I want to delete a branch both locally and remotely. Failed Attempts to Delete a Remote Branch $ git branch -d remotes/origin/bugfix error: branch 'remotes/origin/bugfix' not found. ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "I want to delete a branch both locally and remotely. Failed Attempts to Delete a Remote Branch $ git branch -d remotes/origin/bugfix error: branch 'remotes/origin/bugfix' not found.
+        First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
 
   },
   {
     title: "What does the 'yield' keyword do?",
     syntax: "javascript",
-    issue_body: "What is the use of the yield keyword in Python, and what does it do? For example, I'm trying to understand this code: ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "What is the use of the yield keyword in Python, and what does it do? For example, 
+        I'm trying to understand this code:
+        First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
 
   },
   {
     title: "How do I undo 'git add' before commit?",
     syntax: "javascript",
-    issue_body: "I mistakenly added files to Git using the command: git add myfile.txt I have not yet run git commit. Is there a way to undo this, so these files won't be included in the commit? ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "I mistakenly added files to Git using the command: git add myfile.txt I have not yet run git commit. 
+        Is there a way to undo this, so these files won't be included in the commit?
+        First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
 
   },
   {
     title: "What is the correct JSON content type?",
     syntax: "javascript",
-    issue_body: "I've been messing around with JSON for some time, just pushing it out as text and it hasn't hurt anybody (that I know of), but I'd like to start doing things properly. I have seen so many purported ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "I've been messing around with JSON for some time, just pushing it out as text and it hasn't hurt anybody (that I know of), 
+        but I'd like to start doing things properly. I have seen so many purported
+        First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
 
   },
   {
     title: "What is the '-->' operator in C++?",
     syntax: "javascript",
-    issue_body: "After reading Hidden Features and Dark Corners of C++/STL on comp.lang.c++.moderated, I was completely surprised that the following snippet compiled and worked in both Visual Studio 2008 and G++ 4.4 ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "After reading Hidden Features and Dark Corners of C++/STL on comp.lang.c++.moderated, 
+        I was completely surprised that the following snippet compiled and worked in both Visual Studio 2008 and G++ 4.4
+        First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
 
   },
   {
     title: "How do I rename a local Git branch?",
     syntax: "javascript",
-    issue_body: "I don't want to rename a remote branch, as described in Rename master branch for both local and remote Git repositories. How can I rename a local branch which hasn't been pushed to a remote branch? ```const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000)```"
+    issue_body: "I don't want to rename a remote branch, as described in Rename master branch for both local and remote Git repositories. 
+        How can I rename a local branch which hasn't been pushed to a remote branch?
+        First I will greet: 
+        ``` 
+        const greeting = () => {
+          setTimeout(() => {
+            console.log('Hello internet!')
+          }, 1000) 
+        }
+        ```
+        then I will ask you a question: 
+        ```
+        const askAQuestion = question => {
+          setTimeout(() => {
+            console.log(question)
+          }, 3000)
+        }
+        ```
+        Now I will invoke my functions:
+        ```    
+        greeting()
+        askAQuestion('Do you like my projects?')
+        ```
+        Thank you for watching!"
 
   }
 ]
@@ -102,101 +259,321 @@ issues = [
 comments = [
   {
     syntax: "javascript",
-    comment_body: "This questions has been answered. ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "This question has been answered. 
+              ``` 
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "I know that one... ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "I know that one... 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "I can't wait to be like you guys ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "Franklin is a good friend
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "Simple ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "Simple 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "Check out Marlon algorithm blog post! ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "What if you just applied to more jobs?
+              ``` 
+            const openToWork = question => {
+              setTimeout(() => {
+                console.log(question)
+              }, 100)
+            }
+            ``` 
+            finally: 
+            ```
+            openToWork('Hello everyone, I'm open to work!')
+            ```
+            Good luck!
+            "
   },
   {
     syntax: "javascript",
-    comment_body: "My friend Marlon wants to work in the field! Are you hiring?"
+    comment_body: "Are you hiring?
+            ```
+            const openToWork = question => {
+              setTimeout(() => {
+                console.log(question)
+              }, 100)
+            }
+            ``` 
+            finally: 
+            ```
+            openToWork('Hello everyone, I'm open to work!')
+            ```
+            Good luck!
+            "
   },
   {
     syntax: "javascript",
-    comment_body: "I got this one! ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "I learn quick! 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "JUST FIXED IT!!! ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "JUST FIXED IT!!! 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "Don't be afraid to ask questions. That's how you learn! ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "Don't be afraid to ask questions. That's how you learn! 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "I drank so much coffee right now! This is the 39th issue I help solving. ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "I don't drink coffee past 4pm... 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "Dude, relax! I got you. ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "I have hobbies! 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "It booOOthers me ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "#levelup ALL DAY.. ALL DAY... WHAT'S UP?! ALL DAY!!! - Schmidt (The New Girl) 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   },
   {
     syntax: "javascript",
-    comment_body: "Franklin, you better be watching this. ``` const handleDismissCountDown = () => {
-      setTimeout(() => {
-        setAlertStatus(false)
-      }, 4000) ```"
+    comment_body: "Bashir is a good friend 
+              ```
+            const openToWork = question => {
+                setTimeout(() => {
+                  console.log(question)
+                }, 100)
+              }
+              ``` 
+              finally: 
+              ```
+              openToWork('Hello everyone, I'm open to work!')
+              ```
+              Good luck!
+              "
   }
 ]
 
-# !NOTE! =====> could have used this but it would have given me weird and long emails with possibly different names
-# Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+# generate an array of job_titles
+job_titles = ["Jr. Software Engineer", "DevOps", "Senior Software Engineer", "Technical Support", "IT", "Electronic Engineer"]
+# array of semantic ui avatars
+avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
 
-# generates a male or female first name randomly
-def generate_first_name 
-  return [*0..2].sample > 1 ? Faker::Name.male_first_name : Faker::Name.female_first_name
-end
+marlon = User.create(
+  email: "marlon@example.com",
+  first_name: "Marlon",
+  last_name: "Braga",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+bashir = User.create(
+  email: "bashir@example.com",
+  first_name: "Bashir",
+  last_name: "Alhan",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+franklin = User.create(
+  email: "frank@example.com",
+  first_name: "Franklin",
+  last_name: "Badu",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+sheila = User.create(
+  email: "sheila@example.com",
+  first_name: "Sheila",
+  last_name: "Souza",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+daniela = User.create(
+  email: "daniela@example.com",
+  first_name: "Daniela",
+  last_name: "Perobelli",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+hadji = User.create(
+  email: "hadji@example.com",
+  first_name: "Hadji",
+  last_name: "Guedes",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+elizabeth = User.create(
+  email: "eliza@example.com",
+  first_name: "elizabeth",
+  last_name: "Keswischin",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+taina = User.create(
+  email: "taina@example.com",
+  first_name: "Taina",
+  last_name: "Marques",
+  birthday: "07/27/1994",
+  job_title: job_titles.sample,
+  avatar: avatars.sample,
+  password: "1L*vesalami"
+)
+
+marcelo = User.create(
+  email: "marcelo@example.com",
+  first_name: "Marcelo",
+  last_name: "Souza",
+  birthday: "07/27/1994",
+  job_title: "Senior Software Engineer",
+  avatar: "christian",
+  password: "1L*vesalami"
+)
 
 # create skills
 skills.each do |skill| 
@@ -209,41 +586,6 @@ skills.each do |skill|
     })
   end
 end
-
-# check if user exists
-def check_user
-  # check if that email has already been saved for a user.
-  first_name_pick = generate_first_name().downcase
-  if User.exists?(email: "#{first_name_pick}@example.com")
-    check_user()
-  else 
-    create_user(first_name_pick.titleize)
-  end
-end
-
-# create users
-def create_user(picked_name)
-  # generate an array of ages between 19-60
-  ages = [*19..60]
-  # generate an array of job_titles
-  job_titles = ["Jr. Software Engineer", "DevOps", "Senior Software Engineer", "Technical Support", "IT", "Electronic Engineer"]
-  # array of semantic ui avatars
-  avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
-
-  User.create({
-    email: ("#{picked_name}@example.com"),
-    first_name: picked_name,
-    last_name: Faker::Name.last_name,
-    birthday: "07/27/1994",
-    job_title: job_titles.sample,
-    avatar: avatars.sample,
-    password: "1L*vesalami"
-  })
-end
-
-20.times {
-  check_user()
-}
 
 # check if UserSkill association exists
 def check_user_skill(current_user)
@@ -297,93 +639,23 @@ comments.each do |comment|
   })
 end
 
-marlon = User.create(
-  email: "marlon@example.com",
-  first_name: "Marlon",
-  last_name: "Braga",
-  birthday: "07/27/1994",
-  job_title: "Jr. Software Engineer",
-  avatar: "chris",
-  password: "1L*vesalami"
-)
-marcelo = User.create(
-  email: "marcelo@example.com",
-  first_name: "Marcelo",
-  last_name: "Souza",
-  birthday: "07/27/1994",
-  job_title: "Senior Software Engineer",
-  avatar: "christian",
-  password: "1L*vesalami"
-)
-marcio = User.create(
-  email: "marcio@example.com",
-  first_name: "Marcio",
-  last_name: "Costa",
-  birthday: "07/27/1994",
-  job_title: "Senior Software Engineer",
-  avatar: "daniel",
-  password: "1L*vesalami"
+LikeIssue.create(
+  is_like: true,
+  user: marlon,
+  issue: Issue.first
 )
 
 LikeIssue.create(
   is_like: true,
-  user: marlon,
-  issue: Issue.find_by(id: 1)
+  user: hadji,
+  issue: Issue.first
 )
 
 LikeIssue.create(
   is_like: true,
-  user: marcelo,
-  issue: Issue.find_by(id: 1)
+  user: taina,
+  issue: Issue.first
 )
-
-LikeIssue.create(
-  is_like: true,
-  user: marcio,
-  issue: Issue.find_by(id: 1)
-)
-
-# LikeIssue.create(
-#   is_like: true,
-#   user: marlon,
-#   issue: Issue.find_by(id: 3)
-# )
-# LikeIssue.create(
-#   is_like: false,
-#   user: marlon,
-#   issue: Issue.find_by(id: 4)
-# )
-# LikeIssue.create(
-#   is_like: false,
-#   user: marlon,
-#   issue: Issue.find_by(id: 5)
-# )
-
-Favorite.create(
-  user: marlon,
-  issue: Issue.find_by(id: 6)
-)
-
-Favorite.create(
-  user: marlon,
-  issue: Issue.find_by(id: 3)
-)
-
-Favorite.create(
-  user: marlon,
-  issue: Issue.find_by(id: 7)
-)
-
-UserSkill.create(
-  user: marlon,
-  skill: Skill.first
-)
-
-UserSkill.create(
-  user: marlon,
-  skill: Skill.second
-)
-
 
 puts "===> #{User.count} users created \n"
 puts "===> #{Skill.count} skills created \n"
@@ -394,3 +666,44 @@ puts "===> #{Issue.count} issues created \n"
 puts "=============================="
 puts "==>         SEEDED         <=="
 puts "=============================="
+
+
+# generates a male or female first name randomly
+# def generate_first_name 
+#   return [*0..2].sample > 1 ? Faker::Name.male_first_name : Faker::Name.female_first_name
+# end
+
+# check if user exists
+# def check_user
+#   # check if that email has already been saved for a user.
+#   first_name_pick = generate_first_name().downcase
+#   if User.exists?(email: "#{first_name_pick}@example.com")
+#     check_user()
+#   else 
+#     create_user(first_name_pick.titleize)
+#   end
+# end
+
+# create users
+# def create_user(picked_name)
+#   # generate an array of ages between 19-60
+#   ages = [*19..60]
+#   # generate an array of job_titles
+#   job_titles = ["Jr. Software Engineer", "DevOps", "Senior Software Engineer", "Technical Support", "IT", "Electronic Engineer"]
+#   # array of semantic ui avatars
+#   avatars = ["ade", "chris", "christian", "daniel", "elliot", "helen", "jenny", "joe", "justen", "laura", "matt", "nan", "steve", "stevie", "veronika"] 
+
+#   User.create({
+#     email: ("#{picked_name}@example.com"),
+    # first_name: picked_name,
+    # last_name: Faker::Name.last_name,
+    # birthday: "07/27/1994",
+    # job_title: job_titles.sample,
+    # avatar: avatars.sample,
+    # password: "1L*vesalami"
+#   })
+# end
+
+# 20.times {
+#   check_user()
+# }
