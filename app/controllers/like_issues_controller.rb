@@ -15,7 +15,7 @@ class LikeIssuesController < ApplicationController
     )
 
     if like.valid?
-      render json: { like: like, issue: IssueSerializer.new(issue), errorStatus: false }
+      render json: { like: LikeIssueSerializer.new(like), issue: IssueSerializer.new(issue), errorStatus: false }
     else
       render json: { header: "#{like.errors.full_messages.count} errors occured with your submission", error: like.errors.full_messages, errorStatus: true  }, status: :bad_request
     end
@@ -26,6 +26,6 @@ class LikeIssuesController < ApplicationController
     like = LikeIssue.find_by(id: params[:id])
     issue = Issue.find_by(id: like.issue_id)
     like.destroy
-    render json: {like: like, issue: IssueSerializer.new(issue)}
+    render json: {like: LikeIssueSerializer.new(like), issue: IssueSerializer.new(issue)}
   end
 end
