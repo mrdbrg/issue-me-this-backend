@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   # ====> like_issues routes
   resources :like_issues, only: [:index, :create, :destroy]
+
+  # ====> like_comments routes
+  resources :like_comments, only: [:index, :create, :destroy]
   
   # ====> favorites routes
   resources :favorites, only: [:index, :create, :destroy]
