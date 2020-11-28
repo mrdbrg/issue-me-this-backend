@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_034843) do
     t.string "last_name"
     t.string "birthday"
     t.string "job_title"
-    t.string "avatar"
+    t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
