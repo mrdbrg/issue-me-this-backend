@@ -49,3 +49,7 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 gem "jwt", "~> 2.2"
 
 gem "rest-client", "~> 2.1"
+
+gem 'cloudinary'
+
+gem "figaro"
