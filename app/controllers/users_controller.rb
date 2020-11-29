@@ -14,23 +14,26 @@ class UsersController < ApplicationController
   end
 
   def create
-    # create user
-    user = User.create( 
+    user = User.new( 
       email: params[:email], 
       first_name: params[:first_name], 
       last_name: params[:last_name], 
       job_title: params[:job_title], 
       birthday: params[:birthday], 
-      # avatar: params[:avatar], 
       password: params[:password] 
     )
-      
-      # byebug
-    # if user was successfully created
-    if user.valid? 
-       # if user is valid collect skills from params
-      top_skills = Skill.all.find_all { |skill| params[:top_skills].include?(skill[:value]) }
+    
+    if !user.errors.any? 
+      if params[:picture] 
+        # upload picture to cloudinary 
+        picture = Cloudinary::Uploader.upload(params[:picture])
+        user[:picture] = picture["url"]
+      end
+      # save user
+      user.save
 
+       # if user is valid collect skills from params
+      top_skills = Skill.all.find_all { |skill| params[:top_skills].include?(skill[:text]) }
       # if user is valid create association between new user and skills
       top_skills.each do |sk|
         UserSkill.create(
@@ -42,6 +45,7 @@ class UsersController < ApplicationController
       # encrypt the user id ====> token = JWT.encode payload, password parameter, 'algorithm'
       token = JWT.encode({ user_id: user.id }, "not_too_safe", "HS256")
 
+      # byebug
       # if it validates to true renders json: user & token ====> run user explicitly through serializer
       render json: { user: UserSerializer.new(user), token: token,  errorStatus: false }
     else
@@ -57,12 +61,12 @@ class UsersController < ApplicationController
     remove_skills = []
 
     if params[:password] == "" 
-      new_password = user[:password_digest]
+      password = user[:password_digest]
     else
-      new_password = params[:password]
+      password = params[:password]
     end
 
-    # byebug
+    byebug
     if params[:remove_skills].count != 0
       remove_skills = params[:remove_skills]
 
@@ -90,7 +94,7 @@ class UsersController < ApplicationController
       job_title: params[:job_title], 
       birthday: params[:birthday], 
       # avatar: params[:avatar], 
-      password: new_password 
+      password: password 
     )
 
     # byebug
