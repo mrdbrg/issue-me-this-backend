@@ -60,32 +60,11 @@ class UsersController < ApplicationController
     new_skills = []
     remove_skills = []
 
-    if params[:password] == "" 
+    if params[:password] == nil 
       password = user[:password_digest]
     else
       password = params[:password]
     end
-
-    byebug
-    if params[:remove_skills].count != 0
-      remove_skills = params[:remove_skills]
-
-      remove_skills.each do |sk|
-        skill = Skill.find_by(value: sk)
-        UserSkill.find_by(user: user, skill: skill).destroy
-      end
-    end
-
-    # byebug
-    if params[:new_skills].count != 0
-      new_skills = params[:new_skills]
-
-      new_skills.each do |sk|
-        skill = Skill.find_by(value: sk)
-        UserSkill.create( user: user, skill: skill )
-      end
-    end
-
     # byebug
     user.update(
       email: params[:email], 
@@ -99,6 +78,27 @@ class UsersController < ApplicationController
 
     # byebug
     if user.valid?
+
+         # byebug
+      if params[:remove_skills].count != 0
+        remove_skills = params[:remove_skills]
+
+        remove_skills.each do |sk|
+          skill = Skill.find_by(value: sk)
+          UserSkill.find_by(user: user, skill: skill).destroy
+        end
+      end
+
+      # byebug
+      if params[:new_skills].count != 0
+        new_skills = params[:new_skills]
+
+        new_skills.each do |sk|
+          skill = Skill.find_by(value: sk)
+          UserSkill.create( user: user, skill: skill )
+        end
+      end
+
       render json: { user: UserSerializer.new(user) }
     else
       render json: { header: "You need to fulfill these #{user.errors.full_messages.count} requirements", error: user.errors.full_messages, errorStatus: true }, status: :bad_request 
