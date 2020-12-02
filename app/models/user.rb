@@ -68,10 +68,4 @@ class User < ApplicationRecord
     return if !password.blank? && password.count("0-9") > 0
     errors.add :password, ' must contain at least one number'
   end
-
-  def get_profile_picture_url
-    if self.profile_picture.attached?
-      url_for(self.profile_picture)
-    end
-  end
 end

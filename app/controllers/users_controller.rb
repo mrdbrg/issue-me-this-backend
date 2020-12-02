@@ -108,16 +108,12 @@ class UsersController < ApplicationController
   end
 
   def upload_photo
-    byebug
-    # grabbing user from the db using the id from the query string parameters
-    # i used strong params
     @user = User.find(params[:id])
   
     @user.profile_picture.attach(params[:profile_picture])
     
     if @user.profile_picture.attached?
-      profile_picture_serializer = ProfilePictureSerializer.new(profile_picture: @user.profile_picture, user: @user)
-      render json: profile_picture_serializer.serialize_new_profile_picture()
+      render json: @user
     else
       render json: {errors: "No profile picture attached"}, status: 400
     end
