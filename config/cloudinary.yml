@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dloh9txdc
+  api_key: '576919488313163'
+  api_secret: u_Um5qt9MZcorvk3P__Ez_LhW0Q
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dloh9txdc
+  api_key: '576919488313163'
+  api_secret: u_Um5qt9MZcorvk3P__Ez_LhW0Q
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dloh9txdc
+  api_key: '576919488313163'
+  api_secret: u_Um5qt9MZcorvk3P__Ez_LhW0Q
+  enhance_image_tag: true
+  static_file_support: false

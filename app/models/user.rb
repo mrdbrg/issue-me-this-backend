@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :user_skills
   has_many :skills, through: :user_skills
+  has_one_attached :profile_picture
 
   accepts_nested_attributes_for :comments, allow_destroy: true
 

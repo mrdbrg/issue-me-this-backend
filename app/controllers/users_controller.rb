@@ -72,7 +72,6 @@ class UsersController < ApplicationController
       last_name: params[:last_name], 
       job_title: params[:job_title], 
       birthday: params[:birthday], 
-      # avatar: params[:avatar], 
       password: password 
     )
 
