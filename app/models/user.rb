@@ -67,11 +67,4 @@ class User < ApplicationRecord
     return if !password.blank? && password.count("0-9") > 0
     errors.add :password, ' must contain at least one number'
   end
-
-  # PASSWORD FORMAT
-  # (?=.{8,})          # Must contain 8 or more characters
-  # (?=.*\d)           # Must contain a digit
-  # (?=.*[a-z])        # Must contain a lower case character
-  # (?=.*[A-Z])        # Must contain an upper case character
-  # (?=.*[[:^alnum:]]) # Must contain a symbol
 end
