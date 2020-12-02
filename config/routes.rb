@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   # ====> users routes
   resources :users, only: [:index, :show, :update, :create]
+  post '/users/:id/upload_photo', to: 'users#upload_photo'
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show'
 

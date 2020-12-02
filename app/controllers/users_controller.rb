@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-
   def index
-    users = User.all
+    @users = User.all
 
-    render json: users
+    users_json = UserSerializer.new(@users).serialized_json
+    render json: users_json
+    # render json: users
   end
 
   def show
@@ -20,10 +21,12 @@ class UsersController < ApplicationController
       last_name: params[:last_name], 
       job_title: params[:job_title], 
       birthday: params[:birthday], 
+      pictures: "/default-profile.jpg",
       password: params[:password] 
     )
+    # byebug
     
-    if !user.errors.any? 
+    if user.valid? 
       if params[:picture] 
         # upload picture to cloudinary 
         picture = Cloudinary::Uploader.upload(params[:picture])
@@ -49,8 +52,8 @@ class UsersController < ApplicationController
       # if it validates to true renders json: user & token ====> run user explicitly through serializer
       render json: { user: UserSerializer.new(user), token: token,  errorStatus: false }
     else
-
       # if user is not valid - render error messages (rails validation messages) and status code
+      # byebug
       render json: { header: "You need to fulfill these #{user.errors.full_messages.count} requirements", error: user.errors.full_messages, errorStatus: true }, status: :bad_request 
     end
   end
@@ -72,7 +75,6 @@ class UsersController < ApplicationController
       last_name: params[:last_name], 
       job_title: params[:job_title], 
       birthday: params[:birthday], 
-      # avatar: params[:avatar], 
       password: password 
     )
 
@@ -102,6 +104,22 @@ class UsersController < ApplicationController
       render json: { user: UserSerializer.new(user) }
     else
       render json: { header: "You need to fulfill these #{user.errors.full_messages.count} requirements", error: user.errors.full_messages, errorStatus: true }, status: :bad_request 
+    end
+  end
+
+  def upload_photo
+    byebug
+    # grabbing user from the db using the id from the query string parameters
+    # i used strong params
+    @user = User.find(params[:id])
+  
+    @user.profile_picture.attach(params[:profile_picture])
+    
+    if @user.profile_picture.attached?
+      profile_picture_serializer = ProfilePictureSerializer.new(profile_picture: @user.profile_picture, user: @user)
+      render json: profile_picture_serializer.serialize_new_profile_picture()
+    else
+      render json: {errors: "No profile picture attached"}, status: 400
     end
   end
 

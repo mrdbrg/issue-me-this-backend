@@ -25,6 +25,12 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  # This like tells ActiveRecord to use cloudinary to store your files.
+  config.active_storage.service = :cloudinary
+
+  # Set up Rails to the port you will be using.
+  Rails.application.routes.default_url_options = { host: "http://localhost:3001" }
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
