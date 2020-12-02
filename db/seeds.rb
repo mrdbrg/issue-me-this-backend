@@ -495,6 +495,7 @@ parsed_data = JSON.parse(data)
 count = 1
 parsed_data["results"].each do |user|
   file_name = "#{user["picture"]["large"].split("/")[5]}-#{user["picture"]["large"].split("/")[6]}"
+  
   @current = User.create(
       email: user["email"],
       first_name: user["name"]["first"],
