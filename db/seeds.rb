@@ -489,16 +489,14 @@ def restructure_date(date)
   "#{Date.strptime(date,"%Y-%m-%d").to_s.split("-")[1]}/#{Date.strptime(date,"%Y-%m-%d").to_s.split("-")[2]}/#{Date.strptime(date,"%Y-%m-%d").to_s.split("-")[0]}"
 end
 
-data = RestClient.get "https://randomuser.me/api/?results=5&nat=US&seed=issue-me-this"
+data = RestClient.get "https://randomuser.me/api/?results=20&nat=US&seed=issue-me-this"
 parsed_data = JSON.parse(data)
-# profile_picture: user["picture"]["large"],
 
+count = 1
 parsed_data["results"].each do |user|
   file_name = "#{user["picture"]["large"].split("/")[5]}-#{user["picture"]["large"].split("/")[6]}"
-  # puts "#{user["picture"]["large"].split("/")[5]}-#{user["picture"]["large"].split("/")[6]}"
-  puts "=============================="
 
-  @user = User.create(
+  @current = User.create(
       email: user["email"],
       first_name: user["name"]["first"],
       last_name: user["name"]["last"],
@@ -506,10 +504,11 @@ parsed_data["results"].each do |user|
       job_title: job_titles.sample,
       password: "1L*vesalami"
   )
-  # @message.image.attach(io: File.open('/path/to/file'), filename: 'file.pdf')
-  path = Rails.root + 'db/images/pictures-test-1.jpg'
-  @user.profile_picture.attach(io: File.open(path), filename: "pictures-test-1.jpg", content_type: 'application/pdf')
-  # @user.save_url_path("#{user["picture"]["large"]}")
+
+  # puts "#{file_name}"
+  path = Rails.root + "public/images/user-#{count}.jpg"
+  @current.profile_picture.attach(io: File.open(path), filename: file_name)
+  count+=1
 end
 
 # create skills

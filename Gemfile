@@ -53,5 +53,3 @@ gem "rest-client", "~> 2.1"
 gem 'cloudinary'
 
 gem "figaro"
-
-gem 'fast_jsonapi'
