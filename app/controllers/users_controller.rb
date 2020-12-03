@@ -19,7 +19,6 @@ class UsersController < ApplicationController
       last_name: params[:last_name], 
       job_title: params[:job_title], 
       birthday: params[:birthday], 
-      pictures: "/default-profile.jpg",
       password: params[:password] 
     )
     # byebug
@@ -66,7 +65,8 @@ class UsersController < ApplicationController
     else
       password = params[:password]
     end
-    # byebug
+
+    byebug
     user.update(
       email: params[:email], 
       first_name: params[:first_name], 

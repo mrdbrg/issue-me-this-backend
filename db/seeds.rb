@@ -497,12 +497,12 @@ parsed_data["results"].each do |user|
   file_name = "#{user["picture"]["large"].split("/")[5]}-#{user["picture"]["large"].split("/")[6]}"
   
   @current = User.create(
-      email: user["email"],
-      first_name: user["name"]["first"],
-      last_name: user["name"]["last"],
-      birthday: restructure_date(user["dob"]["date"]),
-      job_title: job_titles.sample,
-      password: "1L*vesalami"
+    email: user["email"],
+    first_name: user["name"]["first"],
+    last_name: user["name"]["last"],
+    birthday: restructure_date(user["dob"]["date"]),
+    job_title: job_titles.sample,
+    password: "1L*vesalami"
   )
   path = Rails.root + "public/images/user-#{count}.jpg"
   @current.profile_picture.attach(io: File.open(path), filename: file_name)

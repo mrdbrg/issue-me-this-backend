@@ -7,9 +7,9 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :like_issues, dependent: :destroy
   has_many :like_comments, dependent: :destroy
-  has_many :user_skills
+  has_many :user_skills, dependent: :destroy
   has_many :skills, through: :user_skills
-  has_one_attached :profile_picture # This macro sets up a one-to-one mapping between records and files.s
+  has_one_attached :profile_picture # This macro sets up a one-to-one mapping between records and files.
 
   accepts_nested_attributes_for :comments, allow_destroy: true
 
