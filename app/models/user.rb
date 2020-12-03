@@ -1,14 +1,15 @@
 class User < ApplicationRecord
+  include Rails.application.routes.url_helpers # To use url_for() on the custom method at the bottom you need to add this line to allow url_helpers.
+
   has_secure_password
   has_many :comments
   has_many :issues
   has_many :favorites, dependent: :destroy
   has_many :like_issues, dependent: :destroy
   has_many :like_comments, dependent: :destroy
-
   has_many :user_skills
   has_many :skills, through: :user_skills
-  has_one_attached :profile_picture
+  has_one_attached :profile_picture # This macro sets up a one-to-one mapping between records and files.s
 
   accepts_nested_attributes_for :comments, allow_destroy: true
 

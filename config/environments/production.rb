@@ -10,6 +10,9 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # This like tells ActiveRecord to use cloudinary to store your files.
+  config.active_storage.service = :cloudinary
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
 

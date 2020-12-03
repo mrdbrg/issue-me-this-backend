@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  # The include line brings Rails URL helpers, which enables us to generate URL’s outside of the controller
+  # We need to add this line to allow url_helpers.
   include Rails.application.routes.url_helpers
 
   attributes :id, :email, :first_name, :last_name, :birthday, :job_title, :profile_picture
@@ -13,7 +13,6 @@ class UserSerializer < ActiveModel::Serializer
     if object.profile_picture.attached?
       {
         image_url: rails_blob_url(object.profile_picture)
-        # image_url: url_for(object.profile_picture)
       }
     end
   end
