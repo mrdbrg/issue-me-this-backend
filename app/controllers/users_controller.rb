@@ -23,13 +23,15 @@ class UsersController < ApplicationController
     )
     # byebug
     
-    if user.valid? 
-      path = Rails.root + "public/images/default-profile.jpg"
-      @user.profile_picture.attach(io: File.open(path), filename: file_name)
+    if @user.valid? 
       
-      # save user
-      user.save
+      path = Rails.root + "public/images/default-profile.jpg"
+      @user.profile_picture.attach(io: File.open(path), filename: "#{@user.last_name}-#{@user.email}.jpg")      
+      # byebug
 
+      @user.save
+
+      # byebug
        # if user is valid collect skills from params
       top_skills = Skill.all.find_all { |skill| params[:top_skills].include?(skill[:text]) }
       # if user is valid create association between new user and skills
@@ -40,12 +42,13 @@ class UsersController < ApplicationController
         )
       end
 
+      # byebug
       # encrypt the user id ====> token = JWT.encode payload, password parameter, 'algorithm'
       token = JWT.encode({ user_id: @user.id }, "not_too_safe", "HS256")
 
       # byebug
       # if it validates to true renders json: user & token ====> run user explicitly through serializer
-      render json: { user: UserSerializer.new(@user), token: token,  errorStatus: false }
+      render json: { user: UserSerializer.new(@user), token: token, errorStatus: false }
     else
       # if user is not valid - render error messages (rails validation messages) and status code
       # byebug
@@ -95,6 +98,7 @@ class UsersController < ApplicationController
           UserSkill.create( user: user, skill: skill )
         end
       end
+
       render json: { user: UserSerializer.new(user) }
     else
       render json: { header: "You need to fulfill these #{user.errors.full_messages.count} requirements", error: user.errors.full_messages, errorStatus: true }, status: :bad_request 
@@ -102,7 +106,6 @@ class UsersController < ApplicationController
   end
 
   def upload_photo
-    byebug
     @user = User.find(params[:id])
   
     @user.profile_picture.attach(params[:profile_picture])
