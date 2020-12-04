@@ -10,28 +10,24 @@ class CommentsController < ApplicationController
     user = User.find_by(id: params[:user_id])
     issue = Issue.find_by(id: params[:issue_id])
 
-    # if both the user and the issue were value 
     comment = Comment.create(
       comment_body: params[:comment][:comment_body],
       syntax: params[:comment][:syntax],
       user: user,
       issue: issue
     )
-    # validates comment
+
     if comment.valid?
       render json: { issue: IssueSerializer.new(issue), comment: CommentSerializer.new(comment), errorStatus: false }
     else
-      # return comment errors
       render json: { header: "#{comment.errors.full_messages.count} errors occured with your submission", error: comment.errors.full_messages, errorStatus: true  }, status: :bad_request
     end
   end
 
   def update
-    # byebug
     comment = Comment.find_by(id: params[:id])
 
     comment.update(comment_body: params[:comment_body])
-    # comment.update(syntax: params[:syntax])
 
     if comment.valid? 
       render json: { comment: CommentSerializer.new(comment), errorStatus: false }

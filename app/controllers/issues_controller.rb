@@ -4,8 +4,7 @@ class IssuesController < ApplicationController
     issue_page_attr = Issue.order("id DESC").paginate(:page => params[:page])
     serialized_pages = []
     serialized_issues = []
-
-    # issues that will be used in the app by other methods
+    
     issues.each do |issue|
       serialized_issues << IssueSerializer.new(issue)
     end
@@ -37,7 +36,6 @@ class IssuesController < ApplicationController
 
     issue.update(title: params[:title])
     issue.update(issue_body: params[:issue_body])
-    # issue.update(syntax: params[:syntax]) 
 
     if issue.valid? 
       render json: { issue: IssueSerializer.new(issue) }

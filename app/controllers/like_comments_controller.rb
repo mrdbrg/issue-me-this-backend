@@ -7,7 +7,6 @@ class LikeCommentsController < ApplicationController
 
   def create 
     comment = Comment.find_by(id: params[:comment_id])
-    # byebug
 
     like = LikeComment.create(
       is_like: params[:like_status],
@@ -24,7 +23,6 @@ class LikeCommentsController < ApplicationController
   end
 
   def destroy 
-    # byebug
     like = LikeComment.find_by(id: params[:id])
     comment = Comment.find_by(id: like.comment_id)
     like.destroy

@@ -3,31 +3,28 @@ class SessionsController < ApplicationController
   end
 
   def login
-    # byebug
-    # find user by email
     user = User.find_by(email: params[:email])
 
     # validates user and password (authentication)
     if user && user.authenticate(params[:password])
-      # byebug
+
       # encrypt the user id ====> token = JWT.encode payload, password parameter, 'algorithm'
       token = JWT.encode({ user_id: user.id }, "not_too_safe", "HS256")
 
-      # if it validates to true renders json: user & token ====> run user explicitly through serializer
+      # if it validates to true renders json: user & token ====> run user explicitly serialization
       render json: { user: UserSerializer.new(user), token: token, header: "Welcome, #{user.first_name} #{user.last_name}!", errorStatus: false }
-
-      # default render before authentication ====> implicitly run through serializer
+      
+      # default render before authentication ====> implicitly serialization runs
       # render json: user
+
     elsif params[:password] == nil && params[:email] == nil
       render json: { header: "Please enter your email and password", error: [], errorStatus: true }, status: :unauthorized      
     else
-      # if user is not valid send error message and status
       render json: { header: "Invalid email or password", error: [], errorStatus: true }, status: :unauthorized
     end
   end
 
   def autologin 
-    # byebug
     # extract the auth header
     auth_header = request.headers['Authorization']
 
@@ -43,21 +40,10 @@ class SessionsController < ApplicationController
     # find user by id 
     user = User.find_by(id: user_id)
 
-    # validates user
     if user 
       render json: user 
     else
-      # if user doesn't validate renders error message and status
       render json: { message: "Not logged in" }, status: :unauthorized
     end
   end
-
-  # json web token - jwt:
-  # it's a feature available in a lot of different languages and it can generate 
-  # an incrypted string (hash string) using the json web token format that would 
-  # let us save information within the string. We can also decrypt that string 
-  # value to use it. 
-  # To encrypt it or decrypt it we will need a secret key that only the backend has access to. 
-  # That means that even if someone finds the token on the client side they won't be able to 
-  # decrypt the password, only the backend will be able to decrypt it.
 end
