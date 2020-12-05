@@ -1,7 +1,7 @@
-class FavoritesController < ApplicationController
+class Api::V1::FavoritesController < ApplicationController
+
   def index
     favorites = Favorite.all
-
     render json: favorites
   end
 
@@ -26,4 +26,8 @@ class FavoritesController < ApplicationController
     favorite.destroy
     render json: {favorite: favorite, issue: IssueSerializer.new(issue)}
   end
+
+  private 
+  # strong params will be add here soon
+
 end

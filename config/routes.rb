@@ -1,39 +1,26 @@
 Rails.application.routes.draw do
-  # ====> sessions routes
-  get '/home', to: 'sessions#home'
-  post '/login', to: 'sessions#login'
-  get '/autologin', to: 'sessions#autologin'
+  namespace :api do
+    namespace :v1 do 
 
-  # ====> issues routes
-  resources :issues, only: [:index, :create, :update, :show, :destroy]
-  # get '/issues', to: 'issues#index'
-  # post '/issues', to: 'issues#create'
-  # get /issues/:id, to: 'issues#show'
-  # patch /issues/:id, to: 'issues#update'
-  # delete /issues/:id to: 'issues#destroy'
+      get '/home', to: 'sessions#home'
+      post '/login', to: 'sessions#login'
+      get '/autologin', to: 'sessions#autologin'
 
-  # ====> like_issues routes
-  resources :like_issues, only: [:index, :create, :destroy]
+      resources :issues, only: [:index, :create, :update, :show, :destroy]
 
-  # ====> like_comments routes
-  resources :like_comments, only: [:index, :create, :destroy]
-  
-  # ====> favorites routes
-  resources :favorites, only: [:index, :create, :destroy]
+      resources :like_issues, only: [:index, :create, :destroy]
 
-  # ====> users routes
-  resources :users, only: [:index, :show, :update, :create]
-  post '/users/:id/upload_photo', to: 'users#upload_photo'
-  # get '/users', to: 'users#index'
-  # get '/users/:id', to: 'users#show'
+      resources :like_comments, only: [:index, :create, :destroy]
+      
+      resources :favorites, only: [:index, :create, :destroy]
 
-  # ====> comments routes
-  resources :comments, only: [:index, :create, :update, :destroy]
-  # get '/comments', to: 'comments#index'
-  # post '/comments', to: 'comments#create'
-  # delete '/comments/:id', to: 'comments#destroy'
+      resources :users, only: [:index, :show, :update, :create]
+      post '/api/v1/users/:id/upload_photo', to: 'users#upload_photo'
 
-  # ====> skills routes
-  resources :skills, only: [:index]
-  # get '/skills', to: 'skills#index'
+      resources :comments, only: [:index, :create, :update, :destroy]
+
+      resources :skills, only: [:index]
+
+    end
+  end
 end

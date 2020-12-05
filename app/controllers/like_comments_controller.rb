@@ -1,7 +1,7 @@
-class LikeCommentsController < ApplicationController
+class Api::V1::LikeCommentsController < ApplicationController
+
   def index 
     likes = LikeComment.all
-
     render json: likes
   end
 
@@ -28,4 +28,8 @@ class LikeCommentsController < ApplicationController
     like.destroy
     render json: {like: LikeCommentSerializer.new(like), comment: CommentSerializer.new(comment)}
   end
+
+  private 
+  # strong params will be add here soon
+
 end

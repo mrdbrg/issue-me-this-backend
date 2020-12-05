@@ -1,4 +1,5 @@
-class IssuesController < ApplicationController
+class Api::V1::IssuesController < ApplicationController
+
   def index
     issues = Issue.all
     issue_page_attr = Issue.order("id DESC").paginate(:page => params[:page])
@@ -55,4 +56,8 @@ class IssuesController < ApplicationController
     
     render json: issue
   end
+
+  private 
+  # strong params will be add here soon
+  
 end

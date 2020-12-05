@@ -1,7 +1,7 @@
-class LikeIssuesController < ApplicationController
+class Api::V1::LikeIssuesController < ApplicationController
+
   def index 
     likes = LikeIssue.all
-
     render json: likes
   end
 
@@ -28,4 +28,8 @@ class LikeIssuesController < ApplicationController
     like.destroy
     render json: {like: LikeIssueSerializer.new(like), issue: IssueSerializer.new(issue)}
   end
+
+  private 
+  # strong params will be add here soon
+  
 end

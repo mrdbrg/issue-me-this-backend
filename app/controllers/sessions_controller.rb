@@ -1,4 +1,5 @@
-class SessionsController < ApplicationController
+class Api::V1::SessionsController < ApplicationController
+  
   def home
   end
 
@@ -46,4 +47,8 @@ class SessionsController < ApplicationController
       render json: { message: "Not logged in" }, status: :unauthorized
     end
   end
+
+  private 
+  # strong params will be add here soon
+
 end

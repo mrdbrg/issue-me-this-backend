@@ -1,8 +1,7 @@
-class CommentsController < ApplicationController
-  def index
-    # comments = Comment.all.order('created_at ASC')
-    comments = Comment.all
+class Api::V1::CommentsController < ApplicationController
 
+  def index
+    comments = Comment.all
     render json: comments
   end
 
@@ -42,4 +41,8 @@ class CommentsController < ApplicationController
     comment.destroy
     render json: {comment: CommentSerializer.new(comment), issue: IssueSerializer.new(issue)}
   end
+
+  private 
+  # strong params will be add here soon
+
 end
