@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :favorites, only: [:index, :create, :destroy]
 
       resources :users, only: [:index, :show, :update, :create]
-      post '/api/v1/users/:id/upload_photo', to: 'users#upload_photo'
+      post '/users/:id/upload_photo', to: 'users#upload_photo'
 
       resources :comments, only: [:index, :create, :update, :destroy]
 

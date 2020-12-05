@@ -30,8 +30,6 @@ Rails.application.configure do
 
   config.active_storage.service = :cloudinary
 
-  Rails.application.routes.default_url_options = { host: "http://localhost:3000" }
-
   # Host parameter to link to image
   Rails.application.routes.default_url_options = { host: "http://localhost:3000" }
 

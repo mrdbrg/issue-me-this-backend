@@ -21,6 +21,7 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def destroy
+    # byebug
     favorite = Favorite.find_by(id: params[:id])
     issue = Issue.find_by(id: favorite.issue_id)
     favorite.destroy
