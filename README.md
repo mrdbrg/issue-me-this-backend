@@ -22,7 +22,7 @@ Comment post view
 
 <br />
 
-### Checkout the project [demo here](needs-to-work-ondemo)
+### Checkout the project [demo here](https://www.youtube.com/watch?v=nE63LDZElBY&ab_channel=MarlonBraga)
 
 <br />
 
@@ -54,10 +54,8 @@ This MVP (Minimum viable product) was built with the intent to solidify foundati
 
 #### Technologies
 
-- Javascript
-- React
-- Rails
-- Cloudinary
+- Ruby on Rails - [Rails API](https://guides.rubyonrails.org/api_app.html)
+- [Cloudinary](https://cloudinary.com/)
 
 #### Rails Gems Used
 
@@ -80,15 +78,16 @@ This MVP (Minimum viable product) was built with the intent to solidify foundati
 
 ## Installation
 
-#### [Issue Me This - Frontend](https://github.com/mrdbrg/issue-me-this-frontend)
-
-1. Fork and clone the repo
-1. npm install
-
 #### [Issue Me This - Backend](https://github.com/mrdbrg/issue-me-this-backend)
 
-1. Fork and clone the repo
-1. bundle install
+1. Fork this pository.
+1. Clone this repository onto your local machine.
+1. From your terminal `cd` into the project's folder.
+1. Run `bundle install` to download all the necessary gems.
+1. Run `rails db:migrate` to create the database.
+1. Run `rails db:seed` to seed the database with some auto-generated data.
+1. Follow the instructions for the [front-end portion](https://github.com/mrdbrg/issue-me-this-frontend) of this application. 
+1. Run `rails s` to start the app.
 
 [Back To The Top](#issue-me-this)
 
